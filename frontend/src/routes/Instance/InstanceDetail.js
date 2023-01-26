@@ -1,7 +1,14 @@
+import { useNavigate, useParams } from "react-router-dom";
+
 const InstanceDetail = () => {
+  const navigate = useNavigate();
+  const {instanceId} = useParams();//임시 인스턴스 ID
     return (
       <>
-        InstanceDetail
+        <div>InstanceDetail {instanceId}</div>
+        <button onClick={() => navigate('/dashboard')}>뒤로가기</button>
+        <button onClick={() => navigate('securityGroup',{instanceId})}>보안 그룹</button>
+        <button onClick={() => navigate('domain',{instanceId})}>도메인 적용</button>
       </>
     );
 };

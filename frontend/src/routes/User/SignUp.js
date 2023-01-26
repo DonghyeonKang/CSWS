@@ -1,7 +1,11 @@
+import { useNavigate } from "react-router-dom";
+
 const SignUp = () => {
+    const navigate = useNavigate();
     return (
       <>
-        SignUp
+        <div>SignUp</div>
+        <button onClick={() => navigate('/login')}>회원가입</button>
       </>
     );
 };

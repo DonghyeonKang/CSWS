@@ -6,7 +6,6 @@ import DashBoard from "./routes/Instance/DashBoard";
 import InstanceDetail from "./routes/Instance/InstanceDetail";
 import CreateInstance from "./routes/Instance/CreateInstance";
 import SecurityGroup from "./routes/Instance/SecurityGroup";
-import Domain from "./routes/Instance/Domain";
 import InboundRules from "./routes/Instance/InboundRules";
 import OutboundRules from "./routes/Instance/OutboundRules";
 
@@ -23,9 +22,7 @@ const Router = () => {
             <Route path="/dashboard/:instanceId" exact element={<InstanceDetail/>}/> 
               <Route path="/dashboard/:instanceId/securityGroup" exact element={<SecurityGroup/>}/> 
                 <Route path="/dashboard/:instanceId/securityGroup/inboundRules" exact element={<InboundRules/>}/> 
-                <Route path="/dashboard/:instanceId/securityGroup/outboundRules" exact element={<OutboundRules/>}/> 
-
-              <Route path="/dashboard/:instanceId/domain" exact element={<Domain/>}/> 
+                <Route path="/dashboard/:instanceId/securityGroup/outboundRules" exact element={<OutboundRules/>}/>
 
             <Route path="/dashboard/createInstance" exact element={<CreateInstance/>}/>
       </Routes>

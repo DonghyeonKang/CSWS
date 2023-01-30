@@ -9,6 +9,17 @@ public class SecurityGroup {
     private int inboundNumber;
     private int outboundNumber;
 
+    public SecurityGroup() {    }
+
+    public SecurityGroup(String securityId, String securityName, String comment, String memberId, int inboundNumber, int outboundNumber) {
+        this.securityId = securityId;
+        this.securityName = securityName;
+        this.comment = comment;
+        this.memberId = memberId;
+        this.inboundNumber = inboundNumber;
+        this.outboundNumber = outboundNumber;
+    }
+
     public String getSecurityId() {
         return securityId;
     }

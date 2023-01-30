@@ -8,6 +8,16 @@ public class Policy {
     private String port;
     private String cidrBlock;
 
+    public Policy() {    }
+
+    public Policy(String securityId, String type, String protocol, String port, String cidrBlock) {
+        this.securityId = securityId;
+        this.type = type;
+        this.protocol = protocol;
+        this.port = port;
+        this.cidrBlock = cidrBlock;
+    }
+
     public String getSecurityId() {
         return securityId;
     }

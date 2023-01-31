@@ -1,6 +1,6 @@
 package com.example.CSWS.dashboard.security;
 
-public class Policy {
+public class BoundPolicy {
 
     private String securityId;
     private String type;
@@ -8,9 +8,9 @@ public class Policy {
     private String port;
     private String cidrBlock;
 
-    public Policy() {    }
+    public BoundPolicy() {    }
 
-    public Policy(String securityId, String type, String protocol, String port, String cidrBlock) {
+    public BoundPolicy(String securityId, String type, String protocol, String port, String cidrBlock) {
         this.securityId = securityId;
         this.type = type;
         this.protocol = protocol;

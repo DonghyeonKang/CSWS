@@ -20,9 +20,9 @@ const Router = () => {
 
           <Route path="/dashboard" exact element={<DashBoard/>}/>
             <Route path="/dashboard/:instanceId" exact element={<InstanceDetail/>}/> 
-              <Route path="/dashboard/:instanceId/securityGroup" exact element={<SecurityGroup/>}/> 
-                <Route path="/dashboard/:instanceId/securityGroup/inboundRules" exact element={<InboundRules/>}/> 
-                <Route path="/dashboard/:instanceId/securityGroup/outboundRules" exact element={<OutboundRules/>}/>
+              <Route path="/dashboard/:instanceId/:securityGroupId" exact element={<SecurityGroup/>}/> 
+                <Route path="/dashboard/:instanceId/:securityGroupId/inboundRules" exact element={<InboundRules/>}/> 
+                <Route path="/dashboard/:instanceId/:securityGroupId/outboundRules" exact element={<OutboundRules/>}/>
 
             <Route path="/dashboard/createInstance" exact element={<CreateInstance/>}/>
       </Routes>

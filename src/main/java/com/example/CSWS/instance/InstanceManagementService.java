@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface InstanceManagementService {
 
-    public List<Instance> findInstanceList(String ownerId);
+    // public List<Instance> findInstanceList(String ownerId);
 
     public Instance findInstanceDetail(String instanceId);
     // public InstanceDetail findInstanceDetail(String instanceId);

@@ -5,6 +5,12 @@ import java.util.List;
 
 public class BoundPolicyServiceImpl implements BoundPolicyService{
 
+    private final BoundPolicyRepository boundPolicyRepository;
+
+    public BoundPolicyServiceImpl(BoundPolicyRepository boundPolicyRepository) {
+        this.boundPolicyRepository = boundPolicyRepository;
+    }
+
     @Override
     public List<BoundPolicy> findAllInboundPolicy(String securityId) {
         // DB에서 해당 securityId에 대응되는 인바운드 정책들 조회

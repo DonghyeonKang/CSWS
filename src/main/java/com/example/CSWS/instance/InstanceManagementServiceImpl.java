@@ -6,12 +6,18 @@ import java.util.List;
 
 public class InstanceManagementServiceImpl implements InstanceManagementService{
 
-    private BoundPolicyService boundPolicyService;
+    private final InstanceRepository instanceRepository;
+    private final BoundPolicyService boundPolicyService;
 
-    @Override
-    public List<Instance> findInstanceList(String ownerId) {
-        return null;
+    public InstanceManagementServiceImpl(InstanceRepository instanceRepository, BoundPolicyService boundPolicyService) {
+        this.instanceRepository = instanceRepository;
+        this.boundPolicyService = boundPolicyService;
     }
+
+    //    @Override
+//    public List<Instance> findInstanceList(String ownerId) {
+//        return null;
+//    }
 
     @Override
     public Instance findInstanceDetail(String instanceId) {

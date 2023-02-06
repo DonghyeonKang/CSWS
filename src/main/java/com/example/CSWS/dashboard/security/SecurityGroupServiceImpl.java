@@ -5,7 +5,13 @@ import java.util.Map;
 
 public class SecurityGroupServiceImpl implements SecurityGroupService{
 
-    private BoundPolicyService boundPolicyService = new BoundPolicyServiceImpl();
+    private final SecurityGroupRepository securityGroupRepository;
+    private final BoundPolicyService boundPolicyService;
+
+    public SecurityGroupServiceImpl(SecurityGroupRepository securityGroupRepository, BoundPolicyService boundPolicyService) {
+        this.securityGroupRepository = securityGroupRepository;
+        this.boundPolicyService = boundPolicyService;
+    }
 
     @Override
     public SecurityGroup findSecurityGroup(String instanceId) {

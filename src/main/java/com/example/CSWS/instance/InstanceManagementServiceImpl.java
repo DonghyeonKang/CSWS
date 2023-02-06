@@ -20,8 +20,8 @@ public class InstanceManagementServiceImpl implements InstanceManagementService{
 //    }
 
     @Override
-    public Instance findInstanceDetail(String instanceId) {
-        return null;
+    public Instance findInstanceDetail(String memberId) {
+        return instanceRepository.findById(memberId);
     }
 
     @Override

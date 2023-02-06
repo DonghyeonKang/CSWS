@@ -18,6 +18,7 @@ public class AppConfig {
         return new InstanceManagementServiceImpl(instanceRepository(), boundPolicyService());
     }
 
+    //private static InstanceRepository m1 = new MemoryInstanceRepository();
     @Bean
     private static InstanceRepository instanceRepository() {
         return new MemoryInstanceRepository();

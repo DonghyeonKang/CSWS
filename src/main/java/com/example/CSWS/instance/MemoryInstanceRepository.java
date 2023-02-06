@@ -20,7 +20,7 @@ public class MemoryInstanceRepository implements InstanceRepository{
     }
 
     @Override
-    public Instance findById(String instanceId) {
-        return temp.get(instanceId);
+    public Instance findById(String memberId) {
+        return temp.get(memberId);
     }
 }

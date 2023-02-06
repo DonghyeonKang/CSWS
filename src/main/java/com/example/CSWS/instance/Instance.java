@@ -109,4 +109,19 @@ public class Instance {
     public void setMemberId(String memberId) {
         this.memberId = memberId;
     }
+
+    @Override
+    public String toString() {
+        return "Instance{" +
+                "name=" + name +
+                ", id=" + id +
+                ", state=" + state +
+                ", storage=" + storage +
+                ", address=" + address +
+                ", port=" + port +
+                ", keyName=" + keyName +
+                ", os=" + os +
+                ", created=" + created +
+                ", memberId=" + memberId + "}";
+    }
 }

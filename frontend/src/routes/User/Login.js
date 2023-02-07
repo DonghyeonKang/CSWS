@@ -1,5 +1,5 @@
-import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Link from '@mui/material/Link';
@@ -8,6 +8,8 @@ import Typography from '@mui/material/Typography';
 import Avatar from '@mui/material/Avatar';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
+import { useRecoilState } from "recoil";
+import { loginState } from "../../Atoms";
 //더미데이터
 const User = {
   email: 'wkdroal11@gmail.com',
@@ -18,6 +20,7 @@ const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [pw, setPw] = useState('');
+  const [,setUserState] = useRecoilState(loginState);
   
   const [emailValid, setEmailValid] = useState(false);
   const [pwValid, setPwValid] = useState(false);
@@ -53,6 +56,7 @@ const Login = () => {
   const onClickConfirmButton =() =>{
     if(email === User.email && pw=== User.pw){
       alert('로그인 성공!.');
+      setUserState(1);
       navigate('/');
     } else {
       alert('이메일 또는 비밀번호가 일치하지 않습니다.');
@@ -132,4 +136,3 @@ const Login = () => {
 }
 
 export default Login;
-

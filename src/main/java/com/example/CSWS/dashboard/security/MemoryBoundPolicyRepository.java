@@ -37,19 +37,15 @@ public class MemoryBoundPolicyRepository implements BoundPolicyRepository{
     @Override
     public BoundPolicy saveInboundPolicy(BoundPolicy inboundPolicy) {
 
-        if (inbounds.add(inboundPolicy))
-            return inboundPolicy;
-        else
-            return null;
+        inbounds.add(inboundPolicy);
+        return inboundPolicy;
     }
 
     @Override
     public BoundPolicy saveOutboundPolicy(BoundPolicy outboundPolicy) {
 
-        if (inbounds.add(outboundPolicy))
-            return outboundPolicy;
-        else
-            return null;
+        outbounds.add(outboundPolicy);
+        return outboundPolicy;
     }
 
     @Override

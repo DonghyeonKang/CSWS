@@ -10,7 +10,7 @@ public class MemorySecurityGroupRepository implements SecurityGroupRepository{
     @Override
     public SecurityGroup findSecurityGroup(String instanceId) {
 
-        return temp.get((instanceId));
+        return temp.get(instanceId);
     }
 
     @Override

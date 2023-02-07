@@ -57,4 +57,14 @@ public class BoundPolicy {
     public void setCidrBlock(String cidrBlock) {
         this.cidrBlock = cidrBlock;
     }
+
+    @Override
+    public String toString() {
+        return "boundPolicy{ " +
+                "securityId=" + securityId +
+                ", type=" + type +
+                ", protocol=" + protocol +
+                ", port=" + port +
+                ", cidrBlock=" + cidrBlock + " }";
+    }
 }

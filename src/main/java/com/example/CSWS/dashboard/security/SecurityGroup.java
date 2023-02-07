@@ -67,4 +67,17 @@ public class SecurityGroup {
     public void setOutboundNumber(int outboundNumber) {
         this.outboundNumber = outboundNumber;
     }
+
+    // SecurityGroup(String securityId, String securityName, String comment, String memberId,
+    // int inboundNumber, int outboundNumber)
+    @Override
+    public String toString() {
+        return "SecurityGroup{ " +
+                "securityId=" + securityId +
+                ", securityName=" + securityName +
+                ", comment=" + comment +
+                ", memberId=" + memberId +
+                ", inboundNumber=" + inboundNumber +
+                ", outboundNumber=" + outboundNumber + " }";
+    }
 }

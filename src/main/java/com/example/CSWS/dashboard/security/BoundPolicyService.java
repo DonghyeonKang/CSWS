@@ -8,9 +8,9 @@ public interface BoundPolicyService {
 
     public List<BoundPolicy> findAllOutboundPolicy(String securityId);
 
-    public int saveInboundPolicy(String securityId);
+    public boolean saveInboundPolicy(BoundPolicy inboundPolicy);
 
-    public int saveOutboundPolicy(String securityId);
+    public boolean saveOutboundPolicy(BoundPolicy outboundPolicy);
 
     public int deleteInboundPolicy(String securityId, BoundPolicy inboundPolicy);
 

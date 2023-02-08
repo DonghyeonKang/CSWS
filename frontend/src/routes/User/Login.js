@@ -8,8 +8,12 @@ import Typography from '@mui/material/Typography';
 import Avatar from '@mui/material/Avatar';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
+import InputAdornment from '@mui/material/InputAdornment';
 import { useRecoilState } from "recoil";
 import { loginState } from "../../Atoms";
+import VisibilityIcon from '@mui/icons-material/Visibility';
+//import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+
 //더미데이터
 const User = {
   email: 'wkdroal11@gmail.com',
@@ -25,7 +29,10 @@ const Login = () => {
   const [emailValid, setEmailValid] = useState(false);
   const [pwValid, setPwValid] = useState(false);
   const [notAllow,setNotAllow] = useState(true);
-  
+  const [passwordType, setPasswordType] = useState({
+    type: 'password',
+    visible: false});
+
   useEffect(() =>{
     if(emailValid && pwValid){
         setNotAllow(false);
@@ -67,9 +74,16 @@ const Login = () => {
     if(e.key === 'Enter' && notAllow===false ) {
       onClickConfirmButton()
     }
+  
   }
-
-
+  const handlePasswordType = e => {
+    setPasswordType(() => {
+        if (!passwordType.visible) {
+            return { type: 'text', visible: true };
+        }
+        return { type: 'password', visible: false };
+    })
+}
   return (
     <Container component="main" maxWidth="xs">
       <Box
@@ -101,7 +115,7 @@ const Login = () => {
         <TextField
           margin="normal"
           label="비밀번호"
-          type="password"
+          type={passwordType.type}
           name="password"
           placeholder="특수문자 제외, 영문, 숫자 포함 8자 이상"
           required
@@ -110,8 +124,15 @@ const Login = () => {
           value={pw}
           onChange={handlePw}
           onKeyPress={onCheckEnter}
-
-        />
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                <VisibilityIcon
+                onClick={handlePasswordType}
+                />
+              </InputAdornment>
+            )
+            }}/>
         <Button 
           disabled={notAllow}
           onClick={onClickConfirmButton}

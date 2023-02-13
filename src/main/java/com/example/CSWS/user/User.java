@@ -17,6 +17,7 @@ public class User {
     private long id;
     private String username;
     private String password;
+    private String Email;
     private String roles;
 
     // ENUM으로 안하고 ,로 해서 구분해서 ROLE을 입력 -> 그걸 파싱!!

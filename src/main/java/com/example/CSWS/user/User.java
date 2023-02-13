@@ -1,14 +1,14 @@
-package com.example.CSWS.member;
+package com.example.CSWS.user;
 
-public class Member {
+public class User {
 
     private String id;
     private String pw;
     private String email;
 
-    public Member() {    }
+    public User() {    }
 
-    public Member(String id, String pw, String email) {
+    public User(String id, String pw, String email) {
         this.id = id;
         this.pw = pw;
         this.email = email;

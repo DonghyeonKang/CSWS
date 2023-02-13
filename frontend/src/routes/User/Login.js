@@ -12,7 +12,7 @@ import InputAdornment from '@mui/material/InputAdornment';
 import { useRecoilState } from "recoil";
 import { loginState } from "../../Atoms";
 import VisibilityIcon from '@mui/icons-material/Visibility';
-//import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
 //더미데이터
 const User = {
@@ -22,10 +22,11 @@ const User = {
 
 const Login = () => {
   const navigate = useNavigate();
+  //이메일,비밀번호
   const [email, setEmail] = useState('');
   const [pw, setPw] = useState('');
+  //유효성 검사
   const [,setUserState] = useRecoilState(loginState);
-  
   const [emailValid, setEmailValid] = useState(false);
   const [pwValid, setPwValid] = useState(false);
   const [notAllow,setNotAllow] = useState(true);

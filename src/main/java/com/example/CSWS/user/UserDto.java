@@ -1,14 +1,14 @@
 package com.example.CSWS.user;
 
-public class UserDTO {
+public class UserDto {
 
     private String id;
     private String pw;
     private String email;
 
-    public UserDTO() {    }
+    public UserDto() {    }
 
-    public UserDTO(String id, String pw, String email) {
+    public UserDto(String id, String pw, String email) {
         this.id = id;
         this.pw = pw;
         this.email = email;

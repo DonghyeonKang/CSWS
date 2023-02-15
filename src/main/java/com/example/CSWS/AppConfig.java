@@ -1,7 +1,15 @@
 package com.example.CSWS;
 
-import com.example.CSWS.dashboard.security.*;
+import com.example.CSWS.dashboard.boundPolicy.BoundPolicyRepository;
+import com.example.CSWS.dashboard.boundPolicy.BoundPolicyService;
+import com.example.CSWS.dashboard.boundPolicy.BoundPolicyServiceImpl;
+import com.example.CSWS.dashboard.boundPolicy.MemoryBoundPolicyRepository;
+import com.example.CSWS.dashboard.securityGroup.*;
 import com.example.CSWS.instance.*;
+import com.example.CSWS.instance.instanceCreate.InstanceCreateService;
+import com.example.CSWS.instance.instanceCreate.InstanceCreateServiceImpl;
+import com.example.CSWS.instance.instanceManagement.InstanceManagementService;
+import com.example.CSWS.instance.instanceManagement.InstanceManagementServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

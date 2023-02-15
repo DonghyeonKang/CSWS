@@ -1,4 +1,4 @@
-package com.example.CSWS.dashboard.security;
+package com.example.CSWS.dashboard.securityGroup;
 
 import java.util.HashMap;
 import java.util.Map;

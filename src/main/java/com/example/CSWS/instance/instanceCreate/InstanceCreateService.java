@@ -1,4 +1,4 @@
-package com.example.CSWS.instance;
+package com.example.CSWS.instance.instanceCreate;
 
 import com.example.CSWS.instance.Instance;
 

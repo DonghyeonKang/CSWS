@@ -1,8 +1,8 @@
 package com.example.CSWS;
 
 import com.example.CSWS.instance.Instance;
-import com.example.CSWS.instance.InstanceCreateService;
-import com.example.CSWS.instance.InstanceManagementService;
+import com.example.CSWS.instance.instanceCreate.InstanceCreateService;
+import com.example.CSWS.instance.instanceManagement.InstanceManagementService;
 import com.example.CSWS.user.UserDto;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;

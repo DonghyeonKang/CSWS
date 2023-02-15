@@ -1,4 +1,6 @@
-package com.example.CSWS.instance;
+package com.example.CSWS.instance.instanceManagement;
+
+import com.example.CSWS.instance.Instance;
 
 import java.util.List;
 

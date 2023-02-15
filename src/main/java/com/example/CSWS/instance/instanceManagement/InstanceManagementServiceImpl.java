@@ -1,8 +1,8 @@
-package com.example.CSWS.instance;
+package com.example.CSWS.instance.instanceManagement;
 
-import com.example.CSWS.dashboard.security.BoundPolicyService;
-
-import java.util.List;
+import com.example.CSWS.dashboard.boundPolicy.BoundPolicyService;
+import com.example.CSWS.instance.Instance;
+import com.example.CSWS.instance.InstanceRepository;
 
 public class InstanceManagementServiceImpl implements InstanceManagementService{
 

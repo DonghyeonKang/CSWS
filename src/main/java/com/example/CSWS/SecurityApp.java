@@ -1,9 +1,9 @@
 package com.example.CSWS;
 
-import com.example.CSWS.dashboard.security.BoundPolicy;
-import com.example.CSWS.dashboard.security.BoundPolicyService;
-import com.example.CSWS.dashboard.security.SecurityGroup;
-import com.example.CSWS.dashboard.security.SecurityGroupService;
+import com.example.CSWS.dashboard.boundPolicy.BoundPolicy;
+import com.example.CSWS.dashboard.boundPolicy.BoundPolicyService;
+import com.example.CSWS.dashboard.securityGroup.SecurityGroup;
+import com.example.CSWS.dashboard.securityGroup.SecurityGroupService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

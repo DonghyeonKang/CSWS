@@ -1,6 +1,6 @@
-package com.example.CSWS.dashboard.security;
+package com.example.CSWS.dashboard.securityGroup;
 
-public interface SecurityGroupService {
+public interface SecurityGroupRepository {
 
     public SecurityGroup findSecurityGroup(String instanceId);
 

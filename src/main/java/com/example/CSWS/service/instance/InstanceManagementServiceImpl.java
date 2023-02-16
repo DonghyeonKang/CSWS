@@ -3,16 +3,20 @@ package com.example.CSWS.service.instance;
 import com.example.CSWS.dto.InstanceDto;
 import com.example.CSWS.service.boundPolicy.BoundPolicyService;
 import com.example.CSWS.repository.instance.InstanceRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 
+@Component
+@RequiredArgsConstructor
 public class InstanceManagementServiceImpl implements InstanceManagementService{
 
     private final InstanceRepository instanceRepository;
     private final BoundPolicyService boundPolicyService;
 
-    public InstanceManagementServiceImpl(InstanceRepository instanceRepository, BoundPolicyService boundPolicyService) {
-        this.instanceRepository = instanceRepository;
-        this.boundPolicyService = boundPolicyService;
-    }
+//    public InstanceManagementServiceImpl(InstanceRepository instanceRepository, BoundPolicyService boundPolicyService) {
+//        this.instanceRepository = instanceRepository;
+//        this.boundPolicyService = boundPolicyService;
+//    }
 
     //    @Override
 //    public List<InstanceDto> findInstanceList(String ownerId) {

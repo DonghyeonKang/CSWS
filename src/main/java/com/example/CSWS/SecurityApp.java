@@ -13,39 +13,12 @@ public class SecurityApp {
 
     public static void main(String[] args) {
 
-        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfigTest1.class);
-        SecurityGroupService securityGroupService = applicationContext.getBean("securityGroupService", SecurityGroupService.class);
-        BoundPolicyService boundPolicyService = applicationContext.getBean("boundPolicyService", BoundPolicyService.class);
+        ApplicationContext ac = new AnnotationConfigApplicationContext(NewAppConfig1.class);
 
-        BoundPolicyDto inbound = new BoundPolicyDto("temp", "ssh", "tcp", "9998", "random");
-        BoundPolicyDto outbound = new BoundPolicyDto("temp", "ftp", "tcp", "9999", "random");
-        SecurityGroupDto s1 = new SecurityGroupDto("temp", "tmp", "for test", "test", 1, 1);
+        SecurityGroupService securityGroupService = ac.getBean(SecurityGroupService.class);
+        BoundPolicyService boundPolicyService = ac.getBean(BoundPolicyService.class);
 
-        securityGroupService.createSecurityGroup("temp", s1);
-        System.out.println(securityGroupService.findSecurityGroup("temp"));
-
-        boundPolicyService.saveInboundPolicy(inbound);
-        boundPolicyService.saveOutboundPolicy(outbound);
-
-        List<BoundPolicyDto> inbounds = boundPolicyService.findAllInboundPolicy("temp");
-        List<BoundPolicyDto> outbounds = boundPolicyService.findAllOutboundPolicy("temp");
-
-        for (BoundPolicyDto in : inbounds) {
-            System.out.println("In" + in);
         }
-        for (BoundPolicyDto out : outbounds) {
-            System.out.println("Out" + out);
-        }
-
-        System.out.println("result=" + boundPolicyService.deleteInboundPolicy("temp", inbound));
-        System.out.println("result=" + boundPolicyService.deleteOutboundPolicy("temp", outbound));
-
-        List<BoundPolicyDto> inbounds2 = boundPolicyService.findAllInboundPolicy("temp");
-        List<BoundPolicyDto> outbounds2 = boundPolicyService.findAllOutboundPolicy("temp");
-
-        if (inbounds2.isEmpty() && outbounds2.isEmpty()) {
-            System.out.println("deleted");
-        }
-    }
 
 }
+

@@ -3,16 +3,20 @@ package com.example.CSWS.service.securityGroup;
 import com.example.CSWS.service.boundPolicy.BoundPolicyService;
 import com.example.CSWS.dto.SecurityGroupDto;
 import com.example.CSWS.repository.securityGroup.SecurityGroupRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 
+@Component
+@RequiredArgsConstructor
 public class SecurityGroupServiceImpl implements SecurityGroupService{
 
     private final SecurityGroupRepository securityGroupRepository;
     private final BoundPolicyService boundPolicyService;
 
-    public SecurityGroupServiceImpl(SecurityGroupRepository securityGroupRepository, BoundPolicyService boundPolicyService) {
-        this.securityGroupRepository = securityGroupRepository;
-        this.boundPolicyService = boundPolicyService;
-    }
+//    public SecurityGroupServiceImpl(SecurityGroupRepository securityGroupRepository, BoundPolicyService boundPolicyService) {
+//        this.securityGroupRepository = securityGroupRepository;
+//        this.boundPolicyService = boundPolicyService;
+//    }
 
     @Override
     public SecurityGroupDto findSecurityGroup(String instanceId) {

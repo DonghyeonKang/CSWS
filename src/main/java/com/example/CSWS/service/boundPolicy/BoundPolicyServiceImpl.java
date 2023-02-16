@@ -2,16 +2,20 @@ package com.example.CSWS.service.boundPolicy;
 
 import com.example.CSWS.dto.BoundPolicyDto;
 import com.example.CSWS.repository.boundPolicy.BoundPolicyRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
+@RequiredArgsConstructor
 public class BoundPolicyServiceImpl implements BoundPolicyService{
 
     private final BoundPolicyRepository boundPolicyRepository;
 
-    public BoundPolicyServiceImpl(BoundPolicyRepository boundPolicyRepository) {
-        this.boundPolicyRepository = boundPolicyRepository;
-    }
+//    public BoundPolicyServiceImpl(BoundPolicyRepository boundPolicyRepository) {
+//        this.boundPolicyRepository = boundPolicyRepository;
+//    }
 
     @Override
     public List<BoundPolicyDto> findAllInboundPolicy(String securityId) {

@@ -1,10 +1,12 @@
 package com.example.CSWS.repository.securityGroup;
 
 import com.example.CSWS.dto.SecurityGroupDto;
+import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;
 
+@Component
 public class MemorySecurityGroupRepository implements SecurityGroupRepository{
 
     private static Map<String, SecurityGroupDto> temp = new HashMap<>();

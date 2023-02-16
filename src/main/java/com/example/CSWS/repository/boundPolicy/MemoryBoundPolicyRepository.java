@@ -1,10 +1,14 @@
 package com.example.CSWS.repository.boundPolicy;
 
 import com.example.CSWS.dto.BoundPolicyDto;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
+@RequiredArgsConstructor
 public class MemoryBoundPolicyRepository implements BoundPolicyRepository{
 
     private static List<BoundPolicyDto> inbounds = new ArrayList<>();

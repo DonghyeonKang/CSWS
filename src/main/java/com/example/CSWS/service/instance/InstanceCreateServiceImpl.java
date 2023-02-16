@@ -1,7 +1,7 @@
-package com.example.CSWS.instance.instanceCreate;
+package com.example.CSWS.service.instance;
 
-import com.example.CSWS.instance.Instance;
-import com.example.CSWS.instance.InstanceRepository;
+import com.example.CSWS.dto.InstanceDto;
+import com.example.CSWS.repository.instance.InstanceRepository;
 
 public class InstanceCreateServiceImpl implements InstanceCreateService{
 
@@ -14,7 +14,7 @@ public class InstanceCreateServiceImpl implements InstanceCreateService{
     }
 
     @Override
-    public int createInstance(Instance instance) {
+    public int createInstance(InstanceDto instance) {
         instanceRepository.createInstance(instance);
         return 1;
     }

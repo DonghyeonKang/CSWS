@@ -1,8 +1,8 @@
-package com.example.CSWS.instance.instanceManagement;
+package com.example.CSWS.service.instance;
 
-import com.example.CSWS.dashboard.boundPolicy.BoundPolicyService;
-import com.example.CSWS.instance.Instance;
-import com.example.CSWS.instance.InstanceRepository;
+import com.example.CSWS.dto.InstanceDto;
+import com.example.CSWS.service.boundPolicy.BoundPolicyService;
+import com.example.CSWS.repository.instance.InstanceRepository;
 
 public class InstanceManagementServiceImpl implements InstanceManagementService{
 
@@ -15,12 +15,12 @@ public class InstanceManagementServiceImpl implements InstanceManagementService{
     }
 
     //    @Override
-//    public List<Instance> findInstanceList(String ownerId) {
+//    public List<InstanceDto> findInstanceList(String ownerId) {
 //        return null;
 //    }
 
     @Override
-    public Instance findInstanceDetail(String memberId) {
+    public InstanceDto findInstanceDetail(String memberId) {
         return instanceRepository.findById(memberId);
     }
 

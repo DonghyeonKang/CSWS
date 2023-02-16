@@ -1,26 +1,28 @@
-package com.example.CSWS.instance;
+package com.example.CSWS.repository.instance;
+
+import com.example.CSWS.dto.InstanceDto;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class MemoryInstanceRepository implements InstanceRepository{
 
-    private static Map<String, Instance> temp = new HashMap<>();
+    private static Map<String, InstanceDto> temp = new HashMap<>();
 
     @Override
-    public Instance createInstance(Instance instance) {
+    public InstanceDto createInstance(InstanceDto instance) {
         temp.put(instance.getMemberId(), instance);
         return instance;
     }
 
     @Override
-    public Instance changeInstance(Instance instance) {
+    public InstanceDto changeInstance(InstanceDto instance) {
         temp.replace(instance.getMemberId(), instance);
         return instance;
     }
 
     @Override
-    public Instance findById(String memberId) {
+    public InstanceDto findById(String memberId) {
         return temp.get(memberId);
     }
 }

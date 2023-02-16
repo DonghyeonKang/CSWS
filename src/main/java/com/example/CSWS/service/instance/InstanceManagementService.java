@@ -1,14 +1,12 @@
-package com.example.CSWS.instance.instanceManagement;
+package com.example.CSWS.service.instance;
 
-import com.example.CSWS.instance.Instance;
-
-import java.util.List;
+import com.example.CSWS.dto.InstanceDto;
 
 public interface InstanceManagementService {
 
-    // public List<Instance> findInstanceList(String ownerId);
+    // public List<InstanceDto> findInstanceList(String ownerId);
 
-    public Instance findInstanceDetail(String instanceId);
+    public InstanceDto findInstanceDetail(String instanceId);
     // public InstanceDetail findInstanceDetail(String instanceId);
 
     public int startInstance(String instanceId);

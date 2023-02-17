@@ -1,6 +1,6 @@
 package com.example.CSWS.service.securityGroup;
 
-import com.example.CSWS.dto.SecurityGroupDto;
+import com.example.CSWS.entityAndDto.SecurityGroupDto;
 
 public interface SecurityGroupService {
 

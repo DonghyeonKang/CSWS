@@ -1,4 +1,4 @@
-package com.example.CSWS.dto;
+package com.example.CSWS.entityAndDto;
 
 import lombok.Data;
 
@@ -10,6 +10,8 @@ public class BoundPolicyDto {
     private String protocol;
     private String port;
     private String cidrBlock;
+
+    public BoundPolicyDto() {    }
 
     public BoundPolicyDto(String securityId, String type, String protocol, String port, String cidrBlock) {
         this.securityId = securityId;

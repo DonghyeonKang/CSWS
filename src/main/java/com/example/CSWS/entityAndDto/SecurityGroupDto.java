@@ -1,4 +1,4 @@
-package com.example.CSWS.dto;
+package com.example.CSWS.entityAndDto;
 
 import lombok.Data;
 
@@ -11,6 +11,8 @@ public class SecurityGroupDto {
     private String memberId;
     private int inboundNumber;
     private int outboundNumber;
+
+    public SecurityGroupDto() {    }
 
     public SecurityGroupDto(String securityId, String securityName, String comment, String memberId, int inboundNumber, int outboundNumber) {
         this.securityId = securityId;

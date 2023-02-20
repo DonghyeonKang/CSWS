@@ -10,7 +10,7 @@ const DashBoardHeader = () => {
             <div>인스턴스</div>
             <Container>
               <InstanceState>
-                <div onClick={()=>{setIOption((prev)=>!prev)}}>인스턴스 상태</div>
+                <State onClick={()=>{setIOption((prev)=>!prev)}}>{IOption ? '인스턴스 상태 ▲' : '인스턴스 상태 ▼'}</State>
                 {IOption ? (
                   <div style={{position:'absolute', backgroundColor:'white'}}>
                     <SetState onClick={()=>{setIOption((prev)=>!prev)}}>인스턴스 시작</SetState>
@@ -29,19 +29,43 @@ export default DashBoardHeader;
 const ContentHeader = styled.div`
   display: flex;
   justify-content: space-between;
+  min-width: 380px;
   margin: 2% 0;
+  font-size: 14px;
 `;
 const Container = styled.div`
   width: 20vw;
+  min-width: 250px;
   display: flex;
   justify-content: space-between;
 `;
 const InstanceState = styled.div`
-  border: 1px solid black;
+  cursor: pointer;
+  border: 0.5px solid #879596;
+`;
+const State = styled.div`
+  padding: 2px 12px;
+  font-weight: 600;
+  :hover{
+    background-color: #fafafa;
+  }
 `;
 const SetState = styled.div`
-  border: 1px solid black;
+  padding: 2px 12px;
+  border: 0.5px solid #879596;
+  font-weight: 600;
+  :hover{
+    background-color: #fafafa;
+    border: 2px solid #879596;
+  }
 `;
-const InstanceCreate = styled.button`
-  max-height: 23px;
+const InstanceCreate = styled.div`
+  cursor: pointer;
+  padding: 2px 12px;
+  background-color: #ec7211;
+  color: white;
+  font-weight: 600;
+  :hover{
+    background-color: #eb5f07;
+  }
 `

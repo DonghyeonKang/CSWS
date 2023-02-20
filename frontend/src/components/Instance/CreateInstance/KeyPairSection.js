@@ -13,8 +13,8 @@ const KeyPairSection = () => {
             </div>
         </KeyPair>
         <Btn>
-            <button onClick={() => navigate("/dashboard")}>취소</button>
-            <button onClick={() => navigate("/dashboard")}>인스턴스 생성</button> 
+            <Cancel onClick={() => navigate("/dashboard")}>취소</Cancel>
+            <Create onClick={() => navigate("/dashboard")}>인스턴스 생성</Create> 
         </Btn>
       </> 
     );
@@ -28,10 +28,11 @@ const KeyPair = styled.div`
   justify-content: center;
   width: 40%;
   min-width: 400px;
-  border: 1px solid black;
   padding: 2%;
   height: 50%;
   margin-bottom: 13%;
+  box-shadow: 2px 2px #dbdfe0;
+  background-color: #fafafa;
 `;
 
 const Title = styled.div`
@@ -45,4 +46,23 @@ const Btn = styled.div`
   justify-content: end;
   align-items: flex-end;
   margin-top: -8%;
+`;
+
+const Create = styled.div`
+  cursor: pointer;
+  margin-left: 20px;
+  padding: 2px 12px;
+  background-color: #ec7211;
+  color: white;
+  :hover{
+    background-color: #eb5f07;
+  }
+`;
+
+const Cancel = styled.div`
+  cursor: pointer;
+  padding: 2px 12px;
+  :hover{
+    background-color: #f2f3f3;
+  }
 `;

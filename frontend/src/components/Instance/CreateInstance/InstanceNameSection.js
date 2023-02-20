@@ -19,9 +19,10 @@ const Name = styled.div`
   justify-content: center;
   width: 40%;
   min-width: 400px;
-  border: 1px solid black;
   padding: 2%;
   margin-bottom: 5%;
+  box-shadow: 2px 2px #dbdfe0;
+  background-color: #fafafa;
 `;
 
 const Title = styled.div`

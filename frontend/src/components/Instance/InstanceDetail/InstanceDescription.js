@@ -27,10 +27,10 @@ const DescriptionContent = styled.div`
 `;
 
 const DescriptionGrid = styled.div`
-  width: 29.2%;
+  width: 315px;
   padding: 2%;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid black;
+  border: 1px solid #eaeded;
 `

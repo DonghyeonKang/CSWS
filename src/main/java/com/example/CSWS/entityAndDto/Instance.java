@@ -2,19 +2,16 @@ package com.example.CSWS.entityAndDto;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Data
-public class InstanceDto {
+public class Instance {
 
     private String name;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
     private String id;
     private String state;
     private Double storage;
@@ -25,9 +22,9 @@ public class InstanceDto {
     private Date created;
     private String memberId;
 
-    public InstanceDto() {    }
+    public Instance() {    }
 
-    public InstanceDto(String name, String id, String state, Double storage, String address, int port, String keyName, String os, Date created, String memberId) {
+    public Instance(String name, String id, String state, Double storage, String address, int port, String keyName, String os, Date created, String memberId) {
         this.name = name;
         this.id = id;
         this.state = state;

@@ -1,6 +1,6 @@
 package com.example.CSWS.service.instance;
 
-import com.example.CSWS.entityAndDto.InstanceDto;
+import com.example.CSWS.entityAndDto.Instance;
 import com.example.CSWS.service.boundPolicy.BoundPolicyService;
 import com.example.CSWS.repository.instance.InstanceRepository;
 import lombok.RequiredArgsConstructor;
@@ -21,13 +21,13 @@ public class InstanceManagementServiceImpl implements InstanceManagementService{
 //    }
 
     //    @Override
-//    public List<InstanceDto> findInstanceList(String ownerId) {
+//    public List<Instance> findInstanceList(String ownerId) {
 //        return null;
 //    }
 
     @Override
-    public Optional<InstanceDto> findInstanceDetail(String memberId) {
-        return instanceRepository.findById(memberId);
+    public Optional<Instance> findInstanceDetail(String instanceId) {
+        return instanceRepository.findById(instanceId);
     }
 
     @Override

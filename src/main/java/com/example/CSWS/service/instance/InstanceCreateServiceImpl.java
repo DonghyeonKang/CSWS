@@ -1,6 +1,6 @@
 package com.example.CSWS.service.instance;
 
-import com.example.CSWS.entityAndDto.InstanceDto;
+import com.example.CSWS.entityAndDto.Instance;
 import com.example.CSWS.repository.instance.InstanceRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -18,8 +18,8 @@ public class InstanceCreateServiceImpl implements InstanceCreateService{
 //    }
 
     @Override
-    public int createInstance(InstanceDto instance) {
-        instanceRepository.createInstance(instance);
+    public int createInstance(Instance instance) {
+        instanceRepository.save(instance);
         return 1;
     }
 

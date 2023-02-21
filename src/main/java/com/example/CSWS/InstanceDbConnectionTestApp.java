@@ -7,7 +7,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import java.text.ParseException;
 
-public class InstanceApp {
+public class InstanceDbConnectionTestApp {
 
     public static void main(String[] args) throws ParseException {
 

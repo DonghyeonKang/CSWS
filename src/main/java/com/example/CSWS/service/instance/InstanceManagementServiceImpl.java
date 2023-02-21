@@ -6,6 +6,8 @@ import com.example.CSWS.repository.instance.InstanceRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.util.Optional;
+
 @Component
 @RequiredArgsConstructor
 public class InstanceManagementServiceImpl implements InstanceManagementService{
@@ -24,7 +26,7 @@ public class InstanceManagementServiceImpl implements InstanceManagementService{
 //    }
 
     @Override
-    public InstanceDto findInstanceDetail(String memberId) {
+    public Optional<InstanceDto> findInstanceDetail(String memberId) {
         return instanceRepository.findById(memberId);
     }
 

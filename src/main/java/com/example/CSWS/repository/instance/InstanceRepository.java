@@ -10,6 +10,6 @@ public interface InstanceRepository {
 
     public InstanceDto changeInstance(InstanceDto instance);
 
-    public InstanceDto findById(String instanceId);
+    public Optional<InstanceDto> findById(String instanceId);
 
 }

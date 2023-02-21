@@ -2,11 +2,13 @@ package com.example.CSWS.service.instance;
 
 import com.example.CSWS.entityAndDto.InstanceDto;
 
+import java.util.Optional;
+
 public interface InstanceManagementService {
 
     // public List<InstanceDto> findInstanceList(String ownerId);
 
-    public InstanceDto findInstanceDetail(String instanceId);
+    public Optional<InstanceDto> findInstanceDetail(String instanceId);
     // public InstanceDetail findInstanceDetail(String instanceId);
 
     public int startInstance(String instanceId);

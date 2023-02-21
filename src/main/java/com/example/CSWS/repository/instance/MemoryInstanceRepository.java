@@ -1,10 +1,10 @@
 package com.example.CSWS.repository.instance;
 
 import com.example.CSWS.entityAndDto.InstanceDto;
-import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 //@Component
 public class MemoryInstanceRepository implements InstanceRepository{
@@ -24,7 +24,7 @@ public class MemoryInstanceRepository implements InstanceRepository{
     }
 
     @Override
-    public InstanceDto findById(String memberId) {
-        return temp.get(memberId);
+    public Optional<InstanceDto> findById(String memberId) {
+        return Optional.ofNullable(temp.get(memberId));
     }
 }

@@ -34,7 +34,7 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 
 	// jdbc, h2 DB 관련 라이브러리
-	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+//	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
 	runtimeOnly 'com.h2database:h2'
 
 

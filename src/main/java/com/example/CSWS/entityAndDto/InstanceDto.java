@@ -2,31 +2,28 @@ package com.example.CSWS.entityAndDto;
 
 import lombok.Data;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Date;
 
-@Entity
 @Data
-public class Instance {
+public class InstanceDto {
 
     private String name;
-    @Id
-    @Column
     private String id;
     private String state;
     private Double storage;
     private String address;
     private int port;
-    @Column(name = "keyname")
     private String keyName;
     private String os;
     private Date created;
-    @Column(name = "memberid")
     private String memberId;
 
-    public Instance() {    }
+    public InstanceDto() {    }
 
-    public Instance(String name, String id, String state, Double storage, String address, int port, String keyName, String os, Date created, String memberId) {
+    public InstanceDto(String name, String id, String state, Double storage, String address, int port, String keyName, String os, Date created, String memberId) {
         this.name = name;
         this.id = id;
         this.state = state;

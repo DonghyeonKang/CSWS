@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="container">
+  <form action="/instance/new" method="post">
+    <div class="form-group">
+      <label for="name">이름</label>
+      <input type="text" id="name" name="name" placeholder="이름을 입력하세요">
+
+      <label for="name">id</label>
+      <input type="text" id="id" name="id">
+
+      <input type="hidden" id="state" name="state" value="ready">
+
+      <label for="name">storage</label>
+      <input type="text" id="storage" name="storage" placeholder="용량(GB)을 입력하세요">
+
+      <br>
+
+      <label for="name">IPv4 주소</label>
+      <input type="text" id="address" name="address">
+
+      <label for="name">포트 번호</label>
+      <input type="text" id="port" name="port">
+
+      <label for="name">키 이름</label>
+      <input type="text" id="keyName" name="keyName">
+
+      <br>
+
+      <label for="name">OS</label>
+      <input type="text" id="os" name="os">
+
+      <label for="name">유저 ID</label>
+      <input type="text" id="memberId" name="memberId">
+    </div>
+    <button type="submit">등록</button>
+  </form>
+</div> <!-- /container -->
+</body>
+</html>

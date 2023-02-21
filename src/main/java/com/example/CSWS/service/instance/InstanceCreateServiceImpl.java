@@ -4,8 +4,10 @@ import com.example.CSWS.entityAndDto.Instance;
 import com.example.CSWS.repository.instance.InstanceRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+//@Component
+@Service
 @RequiredArgsConstructor
 public class InstanceCreateServiceImpl implements InstanceCreateService{
 

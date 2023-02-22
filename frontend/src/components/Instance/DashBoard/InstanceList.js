@@ -71,6 +71,7 @@ const InstanceBody = styled.td`
   text-align: left;
   padding: 5px 0;
   padding-left: 10px;
+  background-color: white;
 `;
 
 const InstanceId = styled(InstanceBody)`

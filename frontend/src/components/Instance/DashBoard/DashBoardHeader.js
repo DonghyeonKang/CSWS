@@ -7,7 +7,7 @@ const DashBoardHeader = () => {
     const [IOption, setIOption] = useState(false); //인스턴스 상태 누르면 시작,중지,재부팅,종료 박스 생성/삭제
     return(
         <ContentHeader>
-            <div>인스턴스</div>
+            <Title>인스턴스</Title>
             <Container>
               <InstanceState>
                 <State onClick={()=>{setIOption((prev)=>!prev)}}>{IOption ? '인스턴스 상태 ▲' : '인스턴스 상태 ▼'}</State>
@@ -30,8 +30,13 @@ const ContentHeader = styled.div`
   display: flex;
   justify-content: space-between;
   min-width: 380px;
+  max-height: 25px;
   margin: 2% 0;
   font-size: 14px;
+`;
+const Title = styled.div`
+  font-size: 20px;
+  font-weight: 600;
 `;
 const Container = styled.div`
   width: 20vw;
@@ -46,6 +51,7 @@ const InstanceState = styled.div`
 const State = styled.div`
   padding: 2px 12px;
   font-weight: 600;
+  background-color: white;
   :hover{
     background-color: #fafafa;
   }

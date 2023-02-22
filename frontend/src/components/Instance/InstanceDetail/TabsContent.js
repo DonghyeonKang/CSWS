@@ -5,35 +5,22 @@ import styled from "styled-components";
 const TabsContent = () => {
   const navigate = useNavigate();
   const [list,setList] = useState('detail'); //인스턴스 상세 탭
-  const [tab, setTab] = useState('detail'); //선택된 탭 강조 표시
   const [domain,setDomain] = useState();
     return (
         <>
-          {tab === 'detail' ? 
+          {list === 'detail' ? 
           <SelectedTab onClick={()=>setList('detail')}>세부정보</SelectedTab> : 
-          <DetailTab onClick={()=>{
-            setList('detail');
-            setTab('detail');
-            }}>세부정보</DetailTab>}
-          {tab === 'security' ? 
+          <DetailTab onClick={()=>setList('detail')}>세부정보</DetailTab>}
+          {list === 'security' ? 
           <SelectedTab onClick={()=>setList('security')}>보안</SelectedTab> : 
-          <DetailTab onClick={()=>{
-            setList('security');
-            setTab('security');
-            }}>보안</DetailTab>}
-          {tab === 'networking' ? 
+          <DetailTab onClick={()=>setList('security')}>보안</DetailTab>}
+          {list === 'networking' ? 
           <SelectedTab onClick={()=>setList('networking')}>네트워킹</SelectedTab> : 
-          <DetailTab onClick={()=>{
-            setList('networking');
-            setTab('networking');
-            }}>네트워킹</DetailTab>}
-          {tab === 'domain' ? 
+          <DetailTab onClick={()=>setList('networking')}>네트워킹</DetailTab>}
+          {list === 'domain' ? 
           <SelectedTab onClick={()=>setList('domain')}>도메인 적용</SelectedTab> : 
-          <DetailTab onClick={()=>{
-            setList('domain');
-            setTab('domain');
-            }}>도메인 적용</DetailTab>}
-            
+          <DetailTab onClick={()=>setList('domain')}>도메인 적용</DetailTab>}
+
             <DetailContent>
                 {(list === 'detail') ? 
                 <>
@@ -59,7 +46,7 @@ const TabsContent = () => {
                 <DetailGrid>네트워크 인터페이스</DetailGrid>
                 </>
                 : <DetailGrid>
-                <input placeholder="도메인 입력" onChange={(i)=>setDomain(i)}/>
+                <DomainInput placeholder="도메인 입력" onChange={(i)=>setDomain(i)}/>
                 <button onClick={()=>console.log(domain.target.value)}>도메인 적용</button>
                 </DetailGrid>}
             </DetailContent>
@@ -85,18 +72,25 @@ const SelectedTab = styled(DetailTab)`
 `;
 
 const DetailContent = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3,33%);
+  grid-auto-flow: row;
+  gap: 0.5%;
+  row-gap: 5px;
   width: 100%;
+  min-width: 900px;
+  margin-bottom: 5%;
+  background-color: white;
 `;
 
 const DetailGrid = styled.div`
-  width: 315px;
-  padding: 2%;
+  width: 100%;
+  min-width: 300px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #eaeded;
+  background-color: white;
 `;
 
 const DetailId = styled(DetailGrid)`
@@ -105,4 +99,8 @@ const DetailId = styled(DetailGrid)`
   :hover{
     text-decoration: underline;
   }
+`;
+
+const DomainInput = styled.input`
+  margin-right: 10%;
 `;

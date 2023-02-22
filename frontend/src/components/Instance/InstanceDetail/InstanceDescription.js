@@ -3,7 +3,7 @@ import styled from "styled-components";
 const InstanceDescription = () => {
     return (
         <>
-            <div>인스턴스 요약</div>
+            <Title>인스턴스 요약</Title>
             <DescriptionContent>
                 <DescriptionGrid>인스턴스 ID</DescriptionGrid>
                 <DescriptionGrid>퍼블릭 IPv4 주소</DescriptionGrid>
@@ -18,19 +18,33 @@ const InstanceDescription = () => {
 
 export default InstanceDescription;
 
+const Title = styled.div`
+  background-color: #fafafa;
+  min-width: 900px;
+  padding: 1%;
+  border: 1px solid #eaeded;
+  font-size: 20px;
+  font-weight: 600;
+`;
+
 const DescriptionContent = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3,33%);
+  grid-auto-flow: row;
+  gap: 0.5%;
+  row-gap: 5px;
   width: 100%;
-  margin-top: 3%;
+  min-width: 900px;
   margin-bottom: 5%;
+  background-color: white;
 `;
 
 const DescriptionGrid = styled.div`
-  width: 315px;
-  padding: 2%;
+  width: 100%;
+  min-width: 300px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #eaeded;
+  background-color: white;
 `

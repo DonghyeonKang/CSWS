@@ -3,7 +3,7 @@ import styled from "styled-components";
 const SecurityGroupDetail = () => {
     return (
         <>
-            <div>세부정보</div>
+            <Title>세부정보</Title>
             <DetailContent>
                 <DetailGrid>보안 그룹 이름</DetailGrid>
                 <DetailGrid>보안 그룹 ID</DetailGrid>
@@ -19,17 +19,31 @@ const SecurityGroupDetail = () => {
 
 export default SecurityGroupDetail;
 
+const Title = styled.div`
+  background-color: #fafafa;
+  min-width: 900px;
+  padding: 1%;
+  border: 1px solid #eaeded;
+  font-size: 20px;
+  font-weight: 600;
+`;
 const DetailContent = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3,33%);
+  grid-auto-flow: row;
+  gap: 0.5%;
+  row-gap: 5px;
   width: 100%;
+  min-width: 900px;
   margin-bottom: 5%;
+  background-color: white;
 `;
 const DetailGrid = styled.div`
-  width: 315px;
-  padding: 2%;
+  width: 100%;
+  min-width: 300px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid black;
+  background-color: white;
 `;

@@ -63,6 +63,6 @@ const Cancel = styled.div`
   cursor: pointer;
   padding: 2px 12px;
   :hover{
-    background-color: #f2f3f3;
+    background-color: white;
   }
 `;

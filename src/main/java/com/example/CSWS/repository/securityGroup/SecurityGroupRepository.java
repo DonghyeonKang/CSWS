@@ -1,11 +1,13 @@
 package com.example.CSWS.repository.securityGroup;
 
-import com.example.CSWS.entityAndDto.SecurityGroupDto;
+import com.example.CSWS.entityAndDto.SecurityGroup;
+
+import java.util.Optional;
 
 public interface SecurityGroupRepository {
 
-    public SecurityGroupDto findSecurityGroup(String instanceId);
+    public Optional<SecurityGroup> findById(String securityId);
 
-    public SecurityGroupDto createSecurityGroup(String instanceId, SecurityGroupDto securityGroup);
+    public SecurityGroup save(String instanceId, SecurityGroup securityGroup);
 
 }

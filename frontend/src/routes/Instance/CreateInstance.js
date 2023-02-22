@@ -4,13 +4,14 @@ import InstanceNameSection from "../../components/Instance/CreateInstance/Instan
 import KeyPairSection from "../../components/Instance/CreateInstance/KeyPairSection";
 import MachineImageSection from "../../components/Instance/CreateInstance/MachineImageSection";
 import StorageSection from "../../components/Instance/CreateInstance/StorageSection";
+import Navigation from "../../components/Navigation";
 
 const CreateInstance = () => {
     return (
       <>
         <Header/>
         <Content>
-          <div>인스턴스 생성</div>
+          <Navigation/>
           <Box>
             <InstanceNameSection/>
             <StorageSection/>
@@ -26,7 +27,7 @@ export default CreateInstance;
 
 const Content = styled.div`
   padding: 0 5%;
-  padding-top: 10vh;
+  padding-top: 70px;
   width: 90%;
 `;
 

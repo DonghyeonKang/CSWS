@@ -8,15 +8,18 @@
 ## 사용자는 vscode ssh config에 등록 후 연결
 ## mac 사용자는 권한 주의
 
-# 키페어로 들어갈 컨테이너 이름
-containerName=$1
+CreateSshKeyPair(){
+    # 키페어로 들어갈 컨테이너 이름
+    local containerName=$1
 
-mkdir ~/.ssh/${containerName}
+    mkdir ~/.ssh/${containerName}
 
-ssh-keygen -t rsa -N "" -f ~/.ssh/${containerName}/${containerName}
+    ssh-keygen -t rsa -N "" -f ~/.ssh/${containerName}/${containerName}
 
-# 사용자는 개인키를 다운받음
+    # 사용자는 개인키를 다운받음
 
-# 공개키를 authorized_keys에 입력
-cat ~/.ssh/${containerName}/${containerName}.pub >> ~/.ssh/authorized_keys
-docker cp ~/.ssh/${containerName}/${containerName}.pub ${containerName}:root/.ssh/authorized_keys
+    # 공개키를 authorized_keys에 입력
+    cat ~/.ssh/${containerName}/${containerName}.pub >> ~/.ssh/authorized_keys
+    docker cp ~/.ssh/${containerName}/${containerName}.pub ${containerName}:root/.ssh/authorized_keys
+}
+CreateSshKeyPair $1

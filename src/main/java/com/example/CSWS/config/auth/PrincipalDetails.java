@@ -1,6 +1,6 @@
 package com.example.CSWS.config.auth;
 
-import com.example.CSWS.user.User;
+import com.example.CSWS.entityAndDto.user.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 

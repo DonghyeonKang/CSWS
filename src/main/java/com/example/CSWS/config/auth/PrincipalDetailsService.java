@@ -1,12 +1,11 @@
 package com.example.CSWS.config.auth;
 
-import com.example.CSWS.user.User;
-import com.example.CSWS.user.UserRepository;
+import com.example.CSWS.entityAndDto.user.User;
+import com.example.CSWS.repository.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.stereotype.Service;
 
 // @Service
 @RequiredArgsConstructor

@@ -1,4 +1,4 @@
-package com.example.CSWS.user;
+package com.example.CSWS.entityAndDto.user;
 
 import javax.persistence.*;
 

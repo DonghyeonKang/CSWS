@@ -2,16 +2,17 @@
 
 hPort=$1 # 호스트 포트
 cPort=$2 # 컨테이너 포트
-imageName=$3 # 실행시킬 컨테이너의 이미지
-#storageSize=$4
-userName=$4 # 컨테이너를 실행시키는 유저 이름
-userCode=$5 # 컨테이너를 실행시키는 유저 이름 뒤에 들어갈 코드
+userName=$3 # 컨테이너를 실행시키는 유저 이름
+userCode=$4 # 컨테이너를 실행시키는 유저 이름 뒤에 들어갈 코드
+storageSize=$5
+imageName=$6 # 실행시킬 컨테이너의 이미지
+
 
 userDir="Users" # 유저들의 컨테이너 코드 정보를 저장할 디렉토리
 txtFile="${userName}.txt"
 
 # 인수가 잘 들어왔는지 확인
-if [ $# -lt 5 ]; then
+if [ $# -lt 6 ]; then
     echo "인수가 부족합니다."
     exit 1
 fi
@@ -22,8 +23,8 @@ if [ ! -d ${userDir} ]; then
 fi
 
 # 도커 컨테이너 실행
-# docker run -p $hPort:$cPort --name ${userName}${userCode} --storage-opt size=$storageSize $imageName
-docker run -it -p $hPort:$cPort --name ${userName}${userCode} $imageName || exit
+docker run -it --privileged -d -p $hPort:$cPort --name ${userName}${userCode} --storage-opt size=$storageSize $imageName /sbin/init || exit
+# docker run -it -p $hPort:$cPort --name ${userName}${userCode} $imageName || exit
 
 # Users 디렉토리로 이동
 cd $userDir || exit

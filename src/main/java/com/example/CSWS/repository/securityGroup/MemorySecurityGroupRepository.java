@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-@Component
+//@Component
 public class MemorySecurityGroupRepository implements SecurityGroupRepository{
 
     private static Map<String, SecurityGroup> temp = new HashMap<>();
@@ -19,8 +19,8 @@ public class MemorySecurityGroupRepository implements SecurityGroupRepository{
     }
 
     @Override
-    public SecurityGroup save(String instanceId, SecurityGroup securityGroup) {
+    public SecurityGroup save(SecurityGroup securityGroup) {
 
-        return temp.put(instanceId, securityGroup);
+        return temp.put(securityGroup.getSecurityId(), securityGroup);
     }
 }

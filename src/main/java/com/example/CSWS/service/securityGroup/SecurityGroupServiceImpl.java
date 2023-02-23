@@ -34,7 +34,7 @@ public class SecurityGroupServiceImpl implements SecurityGroupService{
 
         // intanceId에 대응되는 securityId 생성 후 DB relation 테이블에 저장
         // DB에 securityGroup 저장
-        securityGroupRepository.save(instanceId, newSecurityGroup);
+        securityGroupRepository.save(newSecurityGroup);
 
         return newSecurityGroup;
     }

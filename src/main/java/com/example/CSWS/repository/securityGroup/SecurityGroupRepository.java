@@ -8,6 +8,6 @@ public interface SecurityGroupRepository {
 
     public Optional<SecurityGroup> findById(String securityId);
 
-    public SecurityGroup save(String instanceId, SecurityGroup securityGroup);
+    public SecurityGroup save(SecurityGroup securityGroup);
 
 }

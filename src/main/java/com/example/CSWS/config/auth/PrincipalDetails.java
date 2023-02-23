@@ -6,6 +6,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Optional;
 
 public class PrincipalDetails implements UserDetails{
 
@@ -26,7 +27,7 @@ public class PrincipalDetails implements UserDetails{
 
     @Override
     public String getUsername() {
-        return user.getEmail();
+        return user.getUsername();
     }
 
     @Override

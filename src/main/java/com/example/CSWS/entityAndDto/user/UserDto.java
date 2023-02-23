@@ -1,40 +1,23 @@
 package com.example.CSWS.entityAndDto.user;
 
+import lombok.*;
+
+@Builder
+@Getter
+@Setter
+@NoArgsConstructor  // 매개변수가 없는 생성자
+@AllArgsConstructor // 모든 필드를 매개변수로 받는 생성자
 public class UserDto {
 
-    private String id;
-    private String pw;
-    private String email;
+    private String username;
+    private String password;
+    private String Role;
 
-    public UserDto() {    }
-
-    public UserDto(String id, String pw, String email) {
-        this.id = id;
-        this.pw = pw;
-        this.email = email;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getPw() {
-        return pw;
-    }
-
-    public void setPw(String pw) {
-        this.pw = pw;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public User toEntity() {
+        return User.builder()
+                .username(username)
+                .password(password)
+                .role(Role)
+                .build();
     }
 }

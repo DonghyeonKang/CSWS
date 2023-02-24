@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 import Header from "../../components/Header";
 import InstanceNameSection from "../../components/Instance/CreateInstance/InstanceNameSection";
@@ -7,16 +8,22 @@ import StorageSection from "../../components/Instance/CreateInstance/StorageSect
 import Navigation from "../../components/Navigation";
 
 const CreateInstance = () => {
+  const [data,setData] = useState({
+    name: '',
+    storage: '',
+    machineImage: '',
+    keyPair: '',
+  });
     return (
       <>
         <Header/>
         <Content>
           <Navigation/>
           <Box>
-            <InstanceNameSection/>
-            <StorageSection/>
-            <MachineImageSection/>
-            <KeyPairSection/>
+            <InstanceNameSection setData={setData} data={data}/>
+            <StorageSection setData={setData} data={data}/>
+            <MachineImageSection setData={setData} data={data}/>
+            <KeyPairSection setData={setData} data={data}/>
           </Box>
         </Content>  
       </>

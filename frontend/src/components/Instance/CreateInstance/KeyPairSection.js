@@ -1,21 +1,28 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import KeyPairModal from "./KeyPairModal";
 
-const KeyPairSection = () => {
+const KeyPairSection = ({setData, data}) => {
   const navigate = useNavigate();
+  const [modalOpen, setModalOpen] = useState(false);
+  const keyPairHandler = (event) => {
+    setData({...data, keyPair: event.target.value});
+  }
     return (
       <>
         <KeyPair>
             <Title>키페어</Title>
             <div style={{display:'flex', justifyContent:'space-between'}}>
-            <input style={{width:'60%'}}/>
-            <span>새 키페어 생성</span>
+              <input style={{width:'60%'}} onChange={keyPairHandler}/>
+              <CreateKeyPair onClick={()=>setModalOpen(true)}>새 키페어 생성</CreateKeyPair>
             </div>
         </KeyPair>
         <Btn>
-            <Cancel onClick={() => navigate("/dashboard")}>취소</Cancel>
+            <Cancel onClick={() => console.log(data)}>취소</Cancel>
             <Create onClick={() => navigate("/dashboard")}>인스턴스 생성</Create> 
         </Btn>
+        {modalOpen ? <KeyPairModal setModalOpen={setModalOpen} /> : <></>}
       </> 
     );
 };
@@ -48,6 +55,13 @@ const Btn = styled.div`
   margin-top: -8%;
 `;
 
+const CreateKeyPair = styled.span`
+  cursor: pointer;
+  :hover{
+    text-decoration: underline;
+  }
+`;
+
 const Create = styled.div`
   cursor: pointer;
   margin-left: 20px;
@@ -64,5 +78,6 @@ const Cancel = styled.div`
   padding: 2px 12px;
   :hover{
     background-color: white;
+    color: black;
   }
 `;

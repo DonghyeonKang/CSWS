@@ -1,11 +1,17 @@
 import styled from "styled-components";
 
-const StorageSection = () => {
+const StorageSection = ({setData, data}) => {
+  const storageHandler = (event) => {
+    setData({...data, storage: event.target.value});
+  };
     return (
         <Storage>
             <Title>스토리지 구성</Title>
-            <select>
-                <option>스토리지 구성 정보</option>
+            <select name="storage" onChange={storageHandler}>
+                <option value={1}>1GB</option>
+                <option value={2}>2GB</option>
+                <option value={4}>4GB</option>
+                <option value={8}>8GB</option>
             </select>
         </Storage>
     );

@@ -1,14 +1,18 @@
-import { useState } from "react";
 import styled from "styled-components";
 
-const MachineImageSection = () => {
-    const [, setOs] = useState();
+const MachineImageSection = ({setData, data}) => {
+    const setUbuntu = () => {
+      setData({...data, machineImage: 'Ubuntu'});
+    };
+    const setCentOS = () => {
+      setData({...data, machineImage: 'CentOS'});
+    };
     return (
         <OS>
             <Title>운영체제 종류</Title>
             <OSTabs>
-            <OSTab onClick={()=>setOs('Ubuntu')}>우분투</OSTab>
-            <OSTab onClick={()=>setOs('CentOs')}>CentOS</OSTab>
+              <OSTab onClick={setUbuntu}>우분투</OSTab>
+              <OSTab onClick={setCentOS}>CentOS</OSTab>
             </OSTabs>
             <select>
                 <option>운영체제 버전</option>
@@ -46,6 +50,7 @@ const OSTab = styled.div`
   width: 5vw;
   min-width: 60px;
   height: 10vh;
+  min-height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;

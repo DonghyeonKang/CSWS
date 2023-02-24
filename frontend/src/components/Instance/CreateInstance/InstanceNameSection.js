@@ -1,12 +1,13 @@
-import { useState } from "react";
 import styled from "styled-components";
 
-const InstanceNameSection = () => {
-    const [, setName] = useState();
+const InstanceNameSection = ({setData, data}) => {
+    const nameHandler = (event) => {
+      setData({...data, name:event.target.value});
+    };
     return (
         <Name>
             <Title>인스턴스 이름</Title>
-            <input onChange={(i)=>setName(i.target.value)}/>
+            <input onChange={nameHandler}/>
         </Name>
     );
 };

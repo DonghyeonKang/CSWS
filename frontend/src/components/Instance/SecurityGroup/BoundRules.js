@@ -98,6 +98,7 @@ const EditRules = styled.div`
   background-color: white;
   :hover{
     background-color: #fafafa;
+    color: black;
   }
 `;
 const Rules = styled.table`

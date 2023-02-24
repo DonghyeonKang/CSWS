@@ -5,7 +5,6 @@ const Navigation = () => {
     const param = useParams();
     const navigate = useNavigate();
     const location = useLocation();
-    console.log(param, location.pathname.split('/'));
     return (
         <>
             <Nav>

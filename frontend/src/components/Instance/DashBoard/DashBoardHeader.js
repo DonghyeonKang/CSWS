@@ -54,6 +54,7 @@ const State = styled.div`
   background-color: white;
   :hover{
     background-color: #fafafa;
+    color: black;
   }
 `;
 const SetState = styled.div`
@@ -63,6 +64,7 @@ const SetState = styled.div`
   :hover{
     background-color: #fafafa;
     border: 2px solid #879596;
+    color: black;
   }
 `;
 const InstanceCreate = styled.div`

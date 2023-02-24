@@ -57,7 +57,7 @@ const EditInboundRules = () => {
             <BtnSection>
             <AddRule onClick={()=>addData()}>규칙 추가</AddRule>
             <div>
-                <Cancel onClick={() => navigate(`/dashboard/${instanceId}/${securityGroupId}`)}>뒤로가기(취소)</Cancel>
+                <Cancel onClick={() => navigate(`/dashboard/${instanceId}/${securityGroupId}`)}>취소</Cancel>
                 <SaveRules onClick={() => navigate(`/dashboard/${instanceId}/${securityGroupId}`)}>인바운드 규칙 저장</SaveRules>
             </div>
           </BtnSection>
@@ -89,10 +89,15 @@ const RulesHeader = styled.th`
 `;
 
 const DeleteRule = styled.td`
+  cursor: pointer;
   background-color: white;
   border: 1px solid black;
   text-align: center;
   width: 50px;
+  :hover{
+    background-color: #fafafa;
+    color: black;
+  }
 `;
 
 const BtnSection = styled.div`
@@ -108,6 +113,7 @@ const AddRule = styled.span`
   background-color: white;
   :hover{
     background-color: #fafafa;
+    color: black;
   }
 `
 
@@ -127,5 +133,6 @@ const Cancel = styled.span`
   padding: 2px 12px;
   :hover{
     background-color: white;
+    color: black;
   }
 `;

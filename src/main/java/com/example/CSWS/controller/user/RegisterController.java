@@ -1,6 +1,6 @@
 package com.example.CSWS.controller.user;
 
-import com.example.CSWS.entityAndDto.user.RegisterRequest;
+import com.example.CSWS.domain.user.RegisterRequest;
 import com.example.CSWS.service.user.RegisterService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -24,8 +24,10 @@ public class RegisterController {
     @PostMapping
     public Object register(@ModelAttribute RegisterRequest request) throws IOException {
         try {
+            System.out.println("Controller start");
             request.setPassword(passwordEncoder.encode(request.getPassword()));  // password encoding
-            return Map.of("result", "성공");
+            registerService.register(request);
+            return Map.of("result", "성공");  // 성공 리턴
         } catch (Exception e) {
             throw e;
         }

@@ -3,7 +3,7 @@ package com.example.CSWS.service.user;
 import com.example.CSWS.common.exception.EntityNotFoundException;
 import com.example.CSWS.common.exception.ErrorCode;
 import com.example.CSWS.repository.user.UserRepository;
-import com.example.CSWS.entityAndDto.user.User;
+import com.example.CSWS.domain.user.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

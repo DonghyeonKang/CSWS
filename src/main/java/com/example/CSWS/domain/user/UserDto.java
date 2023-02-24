@@ -1,4 +1,4 @@
-package com.example.CSWS.entityAndDto.user;
+package com.example.CSWS.domain.user;
 
 import lombok.*;
 
@@ -17,7 +17,7 @@ public class UserDto {
         return User.builder()
                 .username(username)
                 .password(password)
-                .role(Role)
+                .roles(Role)
                 .build();
     }
 }

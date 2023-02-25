@@ -1,8 +1,6 @@
 package com.example.CSWS.repository.instance;
 
-import com.example.CSWS.entityAndDto.InstanceDto;
-
-import java.util.Optional;
+import com.example.CSWS.domain.InstanceDto;
 
 public interface InstanceRepository {
 

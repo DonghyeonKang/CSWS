@@ -3,7 +3,7 @@ package com.example.CSWS.config;
 
 import com.example.CSWS.config.jwt.JwtAuthenticationFilter;
 import com.example.CSWS.config.jwt.JwtAuthorizationFilter;
-import com.example.CSWS.user.UserRepository;
+import com.example.CSWS.repository.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -35,6 +35,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 				.addFilter(new JwtAuthorizationFilter(authenticationManager(), userRepository))
 				// 권한 관리
 				.authorizeRequests()
+				.antMatchers("/", "/**").permitAll()
 				.anyRequest().permitAll();	//다른 요청은 권한 허용
 	}
 }

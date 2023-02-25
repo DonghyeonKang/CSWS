@@ -1,10 +1,10 @@
 package com.example.CSWS.instance;
 
 import com.example.CSWS.NewAppConfig1;
-import com.example.CSWS.entityAndDto.InstanceDto;
+import com.example.CSWS.domain.InstanceDto;
 import com.example.CSWS.service.instance.InstanceCreateService;
 import com.example.CSWS.service.instance.InstanceManagementService;
-import com.example.CSWS.user.UserDto;
+import com.example.CSWS.domain.user.UserDto;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -32,7 +32,7 @@ public class InstanceTest1 {
         } catch (ParseException e) {
             throw new RuntimeException(e);
         }
-        InstanceDto i1 = new InstanceDto("temp", "random", "ready", (double)64, "0.0.0.0", 9998, "testKey", "ubuntu",
+        InstanceDto i1 = new InstanceDto("temp", 1, "ready", (double)64, "0.0.0.0", 9998, "testKey", "ubuntu",
                 date, "test");
 
         instanceCreateService.createInstance(i1);

@@ -1,23 +1,26 @@
-package com.example.CSWS.user;
+package com.example.CSWS.domain.user;
 
 import javax.persistence.*;
 
-import lombok.Data;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 @Entity
+@Table(name = "Users")
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private String username;
     private String password;
-    private String Email;
     private String roles;
 
     // ENUM으로 안하고 ,로 해서 구분해서 ROLE을 입력 -> 그걸 파싱!!

@@ -1,4 +1,4 @@
-package com.example.CSWS.entityAndDto;
+package com.example.CSWS.domain;
 
 import lombok.Data;
 
@@ -15,7 +15,7 @@ public class InstanceDto {
     private String name;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private int id;
     private String state;
     private Double storage;
     private String address;
@@ -27,7 +27,7 @@ public class InstanceDto {
 
     public InstanceDto() {    }
 
-    public InstanceDto(String name, String id, String state, Double storage, String address, int port, String keyName, String os, Date created, String memberId) {
+    public InstanceDto(String name, int id, String state, Double storage, String address, int port, String keyName, String os, Date created, String memberId) {
         this.name = name;
         this.id = id;
         this.state = state;

@@ -1,14 +1,13 @@
 package com.example.CSWS.config.auth;
 
-import com.example.CSWS.entityAndDto.user.User;
+import com.example.CSWS.domain.user.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Optional;
 
-public class PrincipalDetails implements UserDetails{
+public class PrincipalDetails implements UserDetails {
 
 	private User user;
 
@@ -52,6 +51,7 @@ public class PrincipalDetails implements UserDetails{
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
+        System.out.println("----------------------------------------------------");
         Collection<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
         user.getRoleList().forEach(r -> {
             authorities.add(()->{ return r;});

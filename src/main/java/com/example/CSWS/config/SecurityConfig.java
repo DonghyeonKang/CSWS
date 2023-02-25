@@ -35,6 +35,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 				.addFilter(new JwtAuthorizationFilter(authenticationManager(), userRepository))
 				// 권한 관리
 				.authorizeRequests()
+				.antMatchers("/", "/**").permitAll()
 				.anyRequest().permitAll();	//다른 요청은 권한 허용
 	}
 }

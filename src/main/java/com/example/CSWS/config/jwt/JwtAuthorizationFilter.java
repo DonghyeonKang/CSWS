@@ -3,7 +3,7 @@ package com.example.CSWS.config.jwt;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.example.CSWS.config.auth.PrincipalDetails;
-import com.example.CSWS.entityAndDto.user.User;
+import com.example.CSWS.domain.user.User;
 import com.example.CSWS.repository.user.UserRepository;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -16,7 +16,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Optional;
 
 // 인가
 public class JwtAuthorizationFilter extends BasicAuthenticationFilter{

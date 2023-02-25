@@ -39,18 +39,19 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 			loginRequestDto = om.readValue(request.getInputStream(), LoginRequestDto.class);
 		} catch (Exception e) {
 			e.printStackTrace();
+			System.out.println(e);
 		}
 		
 		System.out.println("JwtAuthenticationFilter : "+loginRequestDto);
 		
 		// 유저네임패스워드 토큰 생성
-		UsernamePasswordAuthenticationToken authenticationToken = 
+		UsernamePasswordAuthenticationToken authenticationToken =
 				new UsernamePasswordAuthenticationToken(
 						loginRequestDto.getUsername(), 
 						loginRequestDto.getPassword());
 		
 		System.out.println("JwtAuthenticationFilter : 토큰생성완료");
-		
+		System.out.println(authenticationToken);
 		// authenticate() 함수가 호출 되면 인증 프로바이더가 유저 디테일 서비스의
 		// loadUserByUsername(토큰의 첫번째 파라메터) 를 호출하고
 		// UserDetails를 리턴받아서 토큰의 두번째 파라메터(credential)과
@@ -60,10 +61,11 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 		// Tip: 인증 프로바이더의 디폴트 서비스는 UserDetailsService 타입
 		// Tip: 인증 프로바이더의 디폴트 암호화 방식은 BCryptPasswordEncoder
 		// 결론은 인증 프로바이더에게 알려줄 필요가 없음.
+		System.out.println("Authentication 생성");
 		Authentication authentication = authenticationManager.authenticate(authenticationToken);
-		
-		PrincipalDetails principalDetailis = (PrincipalDetails) authentication.getPrincipal();
-		System.out.println("Authentication : "+principalDetailis.getUser().getUsername());
+		// 생성된 Authentication 출력
+		PrincipalDetails principalDetails = (PrincipalDetails) authentication.getPrincipal();
+		System.out.println("Authentication : "+ principalDetails.getUser().getUsername());
 		return authentication;
 	}
 
@@ -71,17 +73,16 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 	@Override
 	protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain,
 			Authentication authResult) throws IOException, ServletException {
-		
+		System.out.println("successfulAuthentication 진입");
 		PrincipalDetails principalDetailis = (PrincipalDetails) authResult.getPrincipal();
 		System.out.println("토큰 생성");
 		String jwtToken = JWT.create()
 				.withSubject(principalDetailis.getUsername())
-				.withExpiresAt(new Date(System.currentTimeMillis()+JwtProperties.EXPIRATION_TIME))
+				.withExpiresAt(new Date(System.currentTimeMillis() + JwtProperties.EXPIRATION_TIME))
 				.withClaim("id", principalDetailis.getUser().getId())
 				.withClaim("username", principalDetailis.getUser().getUsername())
 				.sign(Algorithm.HMAC512(JwtProperties.SECRET));
-		
-		response.addHeader(JwtProperties.HEADER_STRING, JwtProperties.TOKEN_PREFIX+jwtToken);
+
+		response.addHeader(JwtProperties.HEADER_STRING, JwtProperties.TOKEN_PREFIX + jwtToken);
 	}
-	
 }

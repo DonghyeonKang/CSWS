@@ -1,11 +1,6 @@
 package com.example.CSWS.repository.boundPolicy;
 
 import com.example.CSWS.domain.BoundPolicyDto;
-<<<<<<< HEAD
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Component;
-=======
->>>>>>> feature/domain-test
 
 import java.util.ArrayList;
 import java.util.List;

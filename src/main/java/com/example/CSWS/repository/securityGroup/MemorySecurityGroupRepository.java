@@ -1,11 +1,6 @@
 package com.example.CSWS.repository.securityGroup;
 
-<<<<<<< HEAD
-import com.example.CSWS.domain.SecurityGroupDto;
-import org.springframework.stereotype.Component;
-=======
 import com.example.CSWS.domain.SecurityGroup;
->>>>>>> feature/domain-test
 
 import java.util.HashMap;
 import java.util.Map;

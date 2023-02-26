@@ -2,10 +2,6 @@ package com.example.CSWS.service.securityGroup;
 
 import com.example.CSWS.domain.SecurityGroup;
 import com.example.CSWS.service.boundPolicy.BoundPolicyService;
-<<<<<<< HEAD
-import com.example.CSWS.domain.SecurityGroupDto;
-=======
->>>>>>> feature/domain-test
 import com.example.CSWS.repository.securityGroup.SecurityGroupRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;

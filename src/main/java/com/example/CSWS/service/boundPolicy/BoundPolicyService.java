@@ -1,9 +1,6 @@
 package com.example.CSWS.service.boundPolicy;
 
-<<<<<<< HEAD
-=======
 import com.example.CSWS.domain.BoundPolicy;
->>>>>>> feature/domain-test
 import com.example.CSWS.domain.BoundPolicyDto;
 
 import java.util.List;

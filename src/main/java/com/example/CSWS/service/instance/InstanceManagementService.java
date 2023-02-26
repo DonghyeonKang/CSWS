@@ -1,11 +1,7 @@
 package com.example.CSWS.service.instance;
 
 import com.example.CSWS.domain.InstanceDto;
-<<<<<<< HEAD
-=======
-
 import java.util.Optional;
->>>>>>> feature/domain-test
 
 public interface InstanceManagementService {
 

@@ -1,17 +1,12 @@
 package com.example.CSWS.repository.instance;
 
-<<<<<<< HEAD
-import com.example.CSWS.domain.InstanceDto;
-import org.springframework.stereotype.Component;
-=======
 import com.example.CSWS.domain.Instance;
->>>>>>> feature/domain-test
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-@Component
+//@Component
 public class MemoryInstanceRepository implements InstanceRepository{
 
     private static Map<String, Instance> temp = new HashMap<>();

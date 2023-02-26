@@ -1,10 +1,6 @@
 package com.example.CSWS.repository.boundPolicy;
 
-<<<<<<< HEAD
-import com.example.CSWS.domain.BoundPolicyDto;
-=======
 import com.example.CSWS.domain.BoundPolicy;
->>>>>>> feature/domain-test
 
 import java.util.List;
 

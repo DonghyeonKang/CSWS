@@ -1,13 +1,17 @@
 package com.example.CSWS.entityAndDto;
 
+import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-@Data
+@Getter
+@NoArgsConstructor
 public class BoundPolicy {
 
     @Id
@@ -19,8 +23,7 @@ public class BoundPolicy {
     @Column(name = "cidrblock")
     private String cidrBlock;
 
-    public BoundPolicy() {    }
-
+    @Builder
     public BoundPolicy(String securityId, String type, String protocol, String port, String cidrBlock) {
         this.securityId = securityId;
         this.type = type;

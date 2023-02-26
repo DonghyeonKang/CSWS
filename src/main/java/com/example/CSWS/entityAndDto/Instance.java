@@ -1,12 +1,16 @@
 package com.example.CSWS.entityAndDto;
 
+import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Data
+@Getter
+@NoArgsConstructor
 public class Instance {
 
     private String name;
@@ -24,8 +28,7 @@ public class Instance {
     @Column(name = "memberid")
     private String memberId;
 
-    public Instance() {    }
-
+    @Builder
     public Instance(String name, String id, String state, Double storage, String address, int port, String keyName, String os, Date created, String memberId) {
         this.name = name;
         this.id = id;
@@ -38,4 +41,5 @@ public class Instance {
         this.created = created;
         this.memberId = memberId;
     }
+
 }

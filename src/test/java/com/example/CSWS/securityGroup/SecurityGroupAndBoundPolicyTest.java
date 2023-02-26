@@ -1,6 +1,7 @@
 package com.example.CSWS.securityGroup;
 
 import com.example.CSWS.NewAppConfig1;
+import com.example.CSWS.entityAndDto.BoundPolicy;
 import com.example.CSWS.entityAndDto.BoundPolicyDto;
 import com.example.CSWS.entityAndDto.SecurityGroup;
 import com.example.CSWS.entityAndDto.SecurityGroupDto;
@@ -33,21 +34,21 @@ public class SecurityGroupAndBoundPolicyTest {
         boundPolicyService.saveInboundPolicy(inbound);
         boundPolicyService.saveOutboundPolicy(outbound);
 
-        List<BoundPolicyDto> inbounds = boundPolicyService.findAllInboundPolicy("temp");
-        List<BoundPolicyDto> outbounds = boundPolicyService.findAllOutboundPolicy("temp");
+        List<BoundPolicy> inbounds = boundPolicyService.findAllInboundPolicy("temp");
+        List<BoundPolicy> outbounds = boundPolicyService.findAllOutboundPolicy("temp");
 
-        for (BoundPolicyDto in : inbounds) {
+        for (BoundPolicy in : inbounds) {
             System.out.println("In" + in);
         }
-        for (BoundPolicyDto out : outbounds) {
+        for (BoundPolicy out : outbounds) {
             System.out.println("Out" + out);
         }
 
         System.out.println("result=" + boundPolicyService.deleteInboundPolicy("temp", inbound));
         System.out.println("result=" + boundPolicyService.deleteOutboundPolicy("temp", outbound));
 
-        List<BoundPolicyDto> inbounds2 = boundPolicyService.findAllInboundPolicy("temp");
-        List<BoundPolicyDto> outbounds2 = boundPolicyService.findAllOutboundPolicy("temp");
+        List<BoundPolicy> inbounds2 = boundPolicyService.findAllInboundPolicy("temp");
+        List<BoundPolicy> outbounds2 = boundPolicyService.findAllOutboundPolicy("temp");
 
         if (inbounds2.isEmpty() && outbounds2.isEmpty()) {
             System.out.println("deleted");

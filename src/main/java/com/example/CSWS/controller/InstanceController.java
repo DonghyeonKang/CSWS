@@ -38,7 +38,7 @@ public class InstanceController {
     public String create(InstanceDto instanceDto) {
         Instance instance = new Instance();
 
-        instance.setName(instanceDto.getName());
+        /*instance.setName(instanceDto.getName());
         instance.setId(instanceDto.getId());
         instance.setState(instanceDto.getState());
         instance.setStorage(instanceDto.getStorage());
@@ -46,19 +46,11 @@ public class InstanceController {
         instance.setPort(instanceDto.getPort());
         instance.setKeyName(instanceDto.getKeyName());
         instance.setOs(instanceDto.getOs());
-
-//        SimpleDateFormat date1 = new SimpleDateFormat("yyyy-MM-dd");
-//        Date date = null;
-//        try {
-//            date = date1.parse("2023-01-30");
-//        } catch (ParseException e) {
-//            throw new RuntimeException(e);
-//        }
         Date date = new Date();
         instance.setCreated(date);
-        instance.setMemberId(instanceDto.getMemberId());
+        instance.setMemberId(instanceDto.getMemberId());*/
 
-        instanceCreateService.createInstance(instance);
+        instanceCreateService.createInstance(instanceDto);
 
         return "redirect:/";
     }
@@ -69,8 +61,8 @@ public class InstanceController {
     @PostMapping("/instances")
     public String list(Model model, String instanceId) {
         // 임시로 하나만 있는지 확인
-        Optional<Instance> instance = instanceManagementService.findInstanceDetail(instanceId);
-        List<Instance> instances = new ArrayList<>();
+        Optional<InstanceDto> instance = instanceManagementService.findInstanceDetail(instanceId);
+        List<InstanceDto> instances = new ArrayList<>();
         
         // 객체가 존재할 때만 리스트에 추가
         instance.ifPresent(instances::add);

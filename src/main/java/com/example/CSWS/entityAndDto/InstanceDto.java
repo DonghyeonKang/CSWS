@@ -1,13 +1,13 @@
 package com.example.CSWS.entityAndDto;
 
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
 import java.util.Date;
 
 @Data
+@NoArgsConstructor
 public class InstanceDto {
 
     private String name;
@@ -21,18 +21,32 @@ public class InstanceDto {
     private Date created;
     private String memberId;
 
-    public InstanceDto() {    }
+    @Builder
+    public InstanceDto(Instance instance) {
+        this.name = instance.getName();
+        this.id = instance.getId();
+        this.state = instance.getState();
+        this.storage = instance.getStorage();
+        this.address = instance.getAddress();
+        this.port = instance.getPort();
+        this.keyName = instance.getKeyName();
+        this.os = instance.getOs();
+        this.created = instance.getCreated();
+        this.memberId = instance.getMemberId();
+    }
 
-    public InstanceDto(String name, String id, String state, Double storage, String address, int port, String keyName, String os, Date created, String memberId) {
-        this.name = name;
-        this.id = id;
-        this.state = state;
-        this.storage = storage;
-        this.address = address;
-        this.port = port;
-        this.keyName = keyName;
-        this.os = os;
-        this.created = created;
-        this.memberId = memberId;
+    public Instance toEntity() {
+        return Instance.builder()
+                .name(name)
+                .id(id)
+                .state(state)
+                .storage(storage)
+                .address(address)
+                .port(port)
+                .keyName(keyName)
+                .os(os)
+                .created(created)
+                .memberId(memberId)
+                .build();
     }
 }

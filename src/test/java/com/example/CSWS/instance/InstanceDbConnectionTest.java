@@ -2,6 +2,7 @@ package com.example.CSWS.instance;
 
 import com.example.CSWS.NewAppConfig1;
 import com.example.CSWS.entityAndDto.Instance;
+import com.example.CSWS.entityAndDto.InstanceDto;
 import com.example.CSWS.service.instance.InstanceCreateService;
 import com.example.CSWS.service.instance.InstanceManagementService;
 import com.example.CSWS.user.UserDto;
@@ -35,8 +36,17 @@ public class InstanceDbConnectionTest {
         } catch (ParseException e) {
             throw new RuntimeException(e);
         }
-        Instance i1 = new Instance("temp", "random", "ready", (double)64, "0.0.0.0", 9998, "testKey", "ubuntu",
-                date, "test");
+        InstanceDto i1 = new InstanceDto();
+        i1.setName("temp");
+        i1.setId("random");
+        i1.setState("ready");
+        i1.setStorage((double)64);
+        i1.setAddress("0.0.0.0");
+        i1.setPort(9998);
+        i1.setKeyName("testKey");
+        i1.setOs("ubuntu");
+        i1.setCreated(date);
+        i1.setMemberId("test");
 
         instanceCreateService.createInstance(i1);
 

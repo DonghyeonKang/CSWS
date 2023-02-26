@@ -1,6 +1,7 @@
 package com.example.CSWS.service.instance;
 
 import com.example.CSWS.entityAndDto.Instance;
+import com.example.CSWS.entityAndDto.InstanceDto;
 import com.example.CSWS.service.boundPolicy.BoundPolicyService;
 import com.example.CSWS.repository.instance.InstanceRepository;
 import lombok.RequiredArgsConstructor;
@@ -17,19 +18,14 @@ public class InstanceManagementServiceImpl implements InstanceManagementService{
     private final InstanceRepository instanceRepository;
 //    private final BoundPolicyService boundPolicyService;
 
-//    public InstanceManagementServiceImpl(InstanceRepository instanceRepository, BoundPolicyService boundPolicyService) {
-//        this.instanceRepository = instanceRepository;
-//        this.boundPolicyService = boundPolicyService;
-//    }
-
     //    @Override
 //    public List<Instance> findInstanceList(String ownerId) {
 //        return null;
 //    }
 
     @Override
-    public Optional<Instance> findInstanceDetail(String instanceId) {
-        return instanceRepository.findById(instanceId);
+    public Optional<InstanceDto> findInstanceDetail(String instanceId) {
+        return Optional.of(new InstanceDto(instanceRepository.findById(instanceId).get()));
     }
 
     @Override

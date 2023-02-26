@@ -1,13 +1,14 @@
 package com.example.CSWS.entityAndDto;
 
 import lombok.Data;
+import lombok.Getter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-@Data
+@Getter
 public class SecurityGroup {
 
     @Id

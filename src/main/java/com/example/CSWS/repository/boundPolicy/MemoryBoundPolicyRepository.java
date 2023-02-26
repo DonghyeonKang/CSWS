@@ -7,14 +7,13 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
-@RequiredArgsConstructor
-public class MemoryBoundPolicyRepository implements BoundPolicyRepository{
+//@Component
+public class MemoryBoundPolicyRepository/* implements BoundPolicyRepository*/{
 
     private static List<BoundPolicyDto> inbounds = new ArrayList<>();
     private static List<BoundPolicyDto> outbounds = new ArrayList<>();
 
-    @Override
+//    @Override
     public List<BoundPolicyDto> findAllInboundPolicy(String securityId) {
 
         List<BoundPolicyDto> in = new ArrayList<>();
@@ -27,7 +26,7 @@ public class MemoryBoundPolicyRepository implements BoundPolicyRepository{
         return in;
     }
 
-    @Override
+//    @Override
     public List<BoundPolicyDto> findAllOutboundPolicy(String securityId) {
 
         List<BoundPolicyDto> out = new ArrayList<>();
@@ -40,21 +39,21 @@ public class MemoryBoundPolicyRepository implements BoundPolicyRepository{
         return out;
     }
 
-    @Override
+//    @Override
     public BoundPolicyDto saveInboundPolicy(BoundPolicyDto inboundPolicy) {
 
         inbounds.add(inboundPolicy);
         return inboundPolicy;
     }
 
-    @Override
+//    @Override
     public BoundPolicyDto saveOutboundPolicy(BoundPolicyDto outboundPolicy) {
 
         outbounds.add(outboundPolicy);
         return outboundPolicy;
     }
 
-    @Override
+//    @Override
     public int deleteInboundPolicy(String securityId, BoundPolicyDto inboundPolicy) {
 
         for (BoundPolicyDto inbound : inbounds) {
@@ -67,7 +66,7 @@ public class MemoryBoundPolicyRepository implements BoundPolicyRepository{
         return 0;
     }
 
-    @Override
+//    @Override
     public int deleteOutboundPolicy(String securityId, BoundPolicyDto outboundPolicy) {
 
         for (BoundPolicyDto outbound : outbounds) {

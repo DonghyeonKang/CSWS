@@ -15,7 +15,7 @@ import java.util.Optional;
 public class InstanceManagementServiceImpl implements InstanceManagementService{
 
     private final InstanceRepository instanceRepository;
-    private final BoundPolicyService boundPolicyService;
+//    private final BoundPolicyService boundPolicyService;
 
 //    public InstanceManagementServiceImpl(InstanceRepository instanceRepository, BoundPolicyService boundPolicyService) {
 //        this.instanceRepository = instanceRepository;

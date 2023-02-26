@@ -2,6 +2,7 @@ package com.example.CSWS.entityAndDto;
 
 import lombok.Data;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -10,10 +11,12 @@ import javax.persistence.Id;
 public class BoundPolicy {
 
     @Id
+    @Column(name = "securityid")
     private String securityId;
     private String type;
     private String protocol;
     private String port;
+    @Column(name = "cidrblock")
     private String cidrBlock;
 
     public BoundPolicy() {    }

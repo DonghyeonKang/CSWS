@@ -1,7 +1,6 @@
-package com.example.CSWS.entityAndDto;
+package com.example.CSWS.domain;
 
 import lombok.Builder;
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 

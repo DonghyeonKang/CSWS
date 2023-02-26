@@ -1,17 +1,6 @@
 package com.example.CSWS;
 
-import com.example.CSWS.entityAndDto.Instance;
-import com.example.CSWS.service.instance.InstanceCreateService;
-import com.example.CSWS.service.instance.InstanceManagementService;
-import com.example.CSWS.user.UserDto;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
-
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class InstanceDbConnectionTestApp {
 

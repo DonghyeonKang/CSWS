@@ -1,10 +1,8 @@
 package com.example.CSWS.repository.boundPolicy;
 
-import com.example.CSWS.entityAndDto.BoundPolicy;
-import com.example.CSWS.entityAndDto.BoundPolicyDto;
+import com.example.CSWS.domain.BoundPolicy;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface BoundPolicyRepository {
 

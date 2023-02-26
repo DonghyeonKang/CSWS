@@ -1,6 +1,6 @@
 package com.example.CSWS.repository.securityGroup;
 
-import com.example.CSWS.entityAndDto.SecurityGroup;
+import com.example.CSWS.domain.SecurityGroup;
 
 import java.util.Optional;
 

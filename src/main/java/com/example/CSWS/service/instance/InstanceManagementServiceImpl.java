@@ -1,11 +1,8 @@
 package com.example.CSWS.service.instance;
 
-import com.example.CSWS.entityAndDto.Instance;
-import com.example.CSWS.entityAndDto.InstanceDto;
-import com.example.CSWS.service.boundPolicy.BoundPolicyService;
+import com.example.CSWS.domain.InstanceDto;
 import com.example.CSWS.repository.instance.InstanceRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;

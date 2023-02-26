@@ -1,8 +1,7 @@
 package com.example.CSWS.instance;
 
 import com.example.CSWS.NewAppConfig1;
-import com.example.CSWS.entityAndDto.Instance;
-import com.example.CSWS.entityAndDto.InstanceDto;
+import com.example.CSWS.domain.InstanceDto;
 import com.example.CSWS.service.instance.InstanceCreateService;
 import com.example.CSWS.service.instance.InstanceManagementService;
 import com.example.CSWS.user.UserDto;
@@ -10,7 +9,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

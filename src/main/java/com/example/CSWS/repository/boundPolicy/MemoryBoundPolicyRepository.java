@@ -1,8 +1,6 @@
 package com.example.CSWS.repository.boundPolicy;
 
-import com.example.CSWS.entityAndDto.BoundPolicyDto;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Component;
+import com.example.CSWS.domain.BoundPolicyDto;
 
 import java.util.ArrayList;
 import java.util.List;

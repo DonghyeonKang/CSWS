@@ -1,9 +1,7 @@
 package com.example.CSWS.repository.instance;
 
-import com.example.CSWS.entityAndDto.Instance;
+import com.example.CSWS.domain.Instance;
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import java.util.Optional;
 
 public interface JpaInstanceRepository extends JpaRepository<Instance, String>, InstanceRepository {
 

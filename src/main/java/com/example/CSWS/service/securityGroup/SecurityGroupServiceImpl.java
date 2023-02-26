@@ -1,6 +1,6 @@
 package com.example.CSWS.service.securityGroup;
 
-import com.example.CSWS.entityAndDto.SecurityGroup;
+import com.example.CSWS.domain.SecurityGroup;
 import com.example.CSWS.service.boundPolicy.BoundPolicyService;
 import com.example.CSWS.repository.securityGroup.SecurityGroupRepository;
 import lombok.RequiredArgsConstructor;

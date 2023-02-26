@@ -1,31 +1,32 @@
 package com.example.CSWS.service.instance;
 
 import com.example.CSWS.domain.InstanceDto;
+<<<<<<< HEAD
 import com.example.CSWS.service.boundPolicy.BoundPolicyService;
+=======
+>>>>>>> feature/domain-test
 import com.example.CSWS.repository.instance.InstanceRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+import java.util.Optional;
+
+//@Component
+@Service
 @RequiredArgsConstructor
 public class InstanceManagementServiceImpl implements InstanceManagementService{
 
     private final InstanceRepository instanceRepository;
-    private final BoundPolicyService boundPolicyService;
-
-//    public InstanceManagementServiceImpl(InstanceRepository instanceRepository, BoundPolicyService boundPolicyService) {
-//        this.instanceRepository = instanceRepository;
-//        this.boundPolicyService = boundPolicyService;
-//    }
+//    private final BoundPolicyService boundPolicyService;
 
     //    @Override
-//    public List<InstanceDto> findInstanceList(String ownerId) {
+//    public List<Instance> findInstanceList(String ownerId) {
 //        return null;
 //    }
 
     @Override
-    public InstanceDto findInstanceDetail(String memberId) {
-        return instanceRepository.findById(memberId);
+    public Optional<InstanceDto> findInstanceDetail(String instanceId) {
+        return Optional.of(new InstanceDto(instanceRepository.findById(instanceId).get()));
     }
 
     @Override

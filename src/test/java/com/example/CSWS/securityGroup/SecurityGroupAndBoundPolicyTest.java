@@ -1,8 +1,9 @@
 package com.example.CSWS.securityGroup;
 
 import com.example.CSWS.NewAppConfig1;
+import com.example.CSWS.domain.BoundPolicy;
 import com.example.CSWS.domain.BoundPolicyDto;
-import com.example.CSWS.domain.SecurityGroupDto;
+import com.example.CSWS.domain.SecurityGroup;
 import com.example.CSWS.service.boundPolicy.BoundPolicyService;
 import com.example.CSWS.service.securityGroup.SecurityGroupService;
 import org.junit.jupiter.api.Test;
@@ -24,7 +25,7 @@ public class SecurityGroupAndBoundPolicyTest {
 
         BoundPolicyDto inbound = new BoundPolicyDto("temp", "ssh", "tcp", "9998", "random");
         BoundPolicyDto outbound = new BoundPolicyDto("temp", "ftp", "tcp", "9999", "random");
-        SecurityGroupDto s1 = new SecurityGroupDto("temp", "tmp", "for test", "test", 1, 1);
+        SecurityGroup s1 = new SecurityGroup("temp", "tmp", "for test", "test", 1, 1);
 
         securityGroupService.createSecurityGroup("temp", s1);
         System.out.println(securityGroupService.findSecurityGroup("temp"));
@@ -32,21 +33,21 @@ public class SecurityGroupAndBoundPolicyTest {
         boundPolicyService.saveInboundPolicy(inbound);
         boundPolicyService.saveOutboundPolicy(outbound);
 
-        List<BoundPolicyDto> inbounds = boundPolicyService.findAllInboundPolicy("temp");
-        List<BoundPolicyDto> outbounds = boundPolicyService.findAllOutboundPolicy("temp");
+        List<BoundPolicy> inbounds = boundPolicyService.findAllInboundPolicy("temp");
+        List<BoundPolicy> outbounds = boundPolicyService.findAllOutboundPolicy("temp");
 
-        for (BoundPolicyDto in : inbounds) {
+        for (BoundPolicy in : inbounds) {
             System.out.println("In" + in);
         }
-        for (BoundPolicyDto out : outbounds) {
+        for (BoundPolicy out : outbounds) {
             System.out.println("Out" + out);
         }
 
         System.out.println("result=" + boundPolicyService.deleteInboundPolicy("temp", inbound));
         System.out.println("result=" + boundPolicyService.deleteOutboundPolicy("temp", outbound));
 
-        List<BoundPolicyDto> inbounds2 = boundPolicyService.findAllInboundPolicy("temp");
-        List<BoundPolicyDto> outbounds2 = boundPolicyService.findAllOutboundPolicy("temp");
+        List<BoundPolicy> inbounds2 = boundPolicyService.findAllInboundPolicy("temp");
+        List<BoundPolicy> outbounds2 = boundPolicyService.findAllOutboundPolicy("temp");
 
         if (inbounds2.isEmpty() && outbounds2.isEmpty()) {
             System.out.println("deleted");

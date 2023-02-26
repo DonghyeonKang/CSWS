@@ -1,18 +1,22 @@
 package com.example.CSWS.service.boundPolicy;
 
+<<<<<<< HEAD
+=======
+import com.example.CSWS.domain.BoundPolicy;
+>>>>>>> feature/domain-test
 import com.example.CSWS.domain.BoundPolicyDto;
 
 import java.util.List;
 
 public interface BoundPolicyService {
 
-    public List<BoundPolicyDto> findAllInboundPolicy(String securityId);
+    public List<BoundPolicy> findAllInboundPolicy(String securityId);
 
-    public List<BoundPolicyDto> findAllOutboundPolicy(String securityId);
+    public List<BoundPolicy> findAllOutboundPolicy(String securityId);
 
-    public boolean saveInboundPolicy(BoundPolicyDto inboundPolicy);
+    public BoundPolicy saveInboundPolicy(BoundPolicyDto inboundPolicy);
 
-    public boolean saveOutboundPolicy(BoundPolicyDto outboundPolicy);
+    public BoundPolicy saveOutboundPolicy(BoundPolicyDto outboundPolicy);
 
     public int deleteInboundPolicy(String securityId, BoundPolicyDto inboundPolicy);
 

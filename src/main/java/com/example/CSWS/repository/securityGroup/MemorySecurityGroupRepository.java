@@ -1,25 +1,30 @@
 package com.example.CSWS.repository.securityGroup;
 
+<<<<<<< HEAD
 import com.example.CSWS.domain.SecurityGroupDto;
 import org.springframework.stereotype.Component;
+=======
+import com.example.CSWS.domain.SecurityGroup;
+>>>>>>> feature/domain-test
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
-@Component
+//@Component
 public class MemorySecurityGroupRepository implements SecurityGroupRepository{
 
-    private static Map<String, SecurityGroupDto> temp = new HashMap<>();
+    private static Map<String, SecurityGroup> temp = new HashMap<>();
 
     @Override
-    public SecurityGroupDto findSecurityGroup(String instanceId) {
+    public Optional<SecurityGroup> findById(String instanceId) {
 
-        return temp.get(instanceId);
+        return Optional.ofNullable(temp.get(instanceId));
     }
 
     @Override
-    public SecurityGroupDto createSecurityGroup(String instanceId, SecurityGroupDto securityGroup) {
+    public SecurityGroup save(SecurityGroup securityGroup) {
 
-        return temp.put(instanceId, securityGroup);
+        return temp.put(securityGroup.getSecurityId(), securityGroup);
     }
 }

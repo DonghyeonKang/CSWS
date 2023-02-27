@@ -2,6 +2,7 @@ package com.example.CSWS.controller;
 
 import com.example.CSWS.domain.Instance;
 import com.example.CSWS.domain.InstanceDto;
+import com.example.CSWS.common.shRunner.ShRunner;
 import com.example.CSWS.service.instance.InstanceCreateService;
 import com.example.CSWS.service.instance.InstanceManagementService;
 import lombok.RequiredArgsConstructor;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 // 필요한 클래스 앞에 @Service 어노테이션을 붙여줘야 인식한다.
@@ -57,6 +59,17 @@ public class InstanceController {
 
     @PostMapping("/instances")
     public String list(Model model, String instanceId) {
+
+        ShRunner shRunner = new ShRunner();
+
+        // 실행할 쉘 스크립트 경로(절대경로 혹은 저장소 루트로부터의 경로)
+        String cmds = "sh src/main/java/com/example/CSWS/common/shRunner/runnerTest.sh";
+        // 0번 인수 : 배쉬 쉘 실행파일 경로
+        String[] callCmd = {"C:/Program Files/Git/git-bash.exe", "-c", cmds};
+        Map map = shRunner.execCommand(callCmd);
+
+        System.out.println(map);
+
         // 임시로 하나만 있는지 확인
         Optional<InstanceDto> instance = instanceManagementService.findInstanceDetail(instanceId);
         List<InstanceDto> instances = new ArrayList<>();

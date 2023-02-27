@@ -1,13 +1,15 @@
 package com.example.CSWS.repository.instance;
 
-import com.example.CSWS.domain.InstanceDto;
+import com.example.CSWS.domain.Instance;
+
+import java.util.Optional;
 
 public interface InstanceRepository {
 
-    public InstanceDto createInstance(InstanceDto instance);
+    public Instance save(Instance instance);
 
-    public InstanceDto changeInstance(InstanceDto instance);
+//    public Instance changeInstance(Instance instance);
 
-    public InstanceDto findById(String instanceId);
+    public Optional<Instance> findById(String instanceId);
 
 }

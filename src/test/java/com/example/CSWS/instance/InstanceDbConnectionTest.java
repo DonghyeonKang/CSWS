@@ -6,23 +6,25 @@ import com.example.CSWS.service.instance.InstanceCreateService;
 import com.example.CSWS.service.instance.InstanceManagementService;
 import com.example.CSWS.domain.user.UserDto;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-@Transactional
-public class InstanceTest1 {
+@SpringBootTest
+//@Transactional
+public class InstanceDbConnectionTest {
 
     @Test
-    void test() {
+//    @Transactional
+    void testInstanceServices() {
         ApplicationContext ac = new AnnotationConfigApplicationContext(NewAppConfig1.class);
+        InstanceManagementService instanceManagementService = ac.getBean(InstanceManagementService.class);
 
         InstanceCreateService instanceCreateService = ac.getBean(InstanceCreateService.class);
-        InstanceManagementService instanceManagementService = ac.getBean(InstanceManagementService.class);
 
         UserDto m1 = new UserDto("test", "test", "test@naver.com");
         SimpleDateFormat date1 = new SimpleDateFormat("yyyy-MM-dd");
@@ -32,11 +34,21 @@ public class InstanceTest1 {
         } catch (ParseException e) {
             throw new RuntimeException(e);
         }
-        InstanceDto i1 = new InstanceDto("temp", 1, "ready", (double)64, "0.0.0.0", 9998, "testKey", "ubuntu",
-                date, "test");
+        InstanceDto i1 = new InstanceDto();
+        i1.setName("temp");
+        i1.setId("random");
+        i1.setState("ready");
+        i1.setStorage((double)64);
+        i1.setAddress("0.0.0.0");
+        i1.setPort(9998);
+        i1.setKeyName("testKey");
+        i1.setOs("ubuntu");
+        i1.setCreated(date);
+        i1.setMemberId("test");
 
         instanceCreateService.createInstance(i1);
 
-        System.out.println("instance = " + instanceManagementService.findInstanceDetail(i1.getMemberId()));
+        System.out.println("instance = " + instanceManagementService.findInstanceDetail(i1.getId()));
     }
+
 }

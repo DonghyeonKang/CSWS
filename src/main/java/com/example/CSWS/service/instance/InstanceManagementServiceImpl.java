@@ -1,24 +1,19 @@
 package com.example.CSWS.service.instance;
 
 import com.example.CSWS.domain.InstanceDto;
-import com.example.CSWS.service.boundPolicy.BoundPolicyService;
 import com.example.CSWS.repository.instance.InstanceRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
-@Component
+@Service
 @RequiredArgsConstructor
 public class InstanceManagementServiceImpl implements InstanceManagementService{
 
     private final InstanceRepository instanceRepository;
-    private final BoundPolicyService boundPolicyService;
-
-//    public InstanceManagementServiceImpl(InstanceRepository instanceRepository, BoundPolicyService boundPolicyService) {
-//        this.instanceRepository = instanceRepository;
-//        this.boundPolicyService = boundPolicyService;
-//    }
+//    private final BoundPolicyService boundPolicyService;
 
     @Override
     public List<InstanceDto> findInstanceList(String username) {
@@ -26,8 +21,8 @@ public class InstanceManagementServiceImpl implements InstanceManagementService{
     }
 
     @Override
-    public InstanceDto findInstanceDetail(String memberId) {
-        return instanceRepository.findById(memberId);
+    public Optional<InstanceDto> findInstanceDetail(String instanceId) {
+        return Optional.of(new InstanceDto(instanceRepository.findById(instanceId).get()));
     }
 
     @Override

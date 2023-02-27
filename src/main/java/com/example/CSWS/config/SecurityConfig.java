@@ -36,6 +36,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 				// 권한 관리
 				.authorizeRequests()
 				.antMatchers("/", "/**").permitAll()
+				.antMatchers("/instances")// instance 관리하는 작업은 모두 user, manager, admin 권한이 있어야한다.
+				.access("hasRole('ROLE_USER', 'ROLE_MANAGER', 'ROLE_ADMIN')")
 				.anyRequest().permitAll();	//다른 요청은 권한 허용
 	}
 }

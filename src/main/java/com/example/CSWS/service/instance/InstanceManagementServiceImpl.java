@@ -6,6 +6,8 @@ import com.example.CSWS.repository.instance.InstanceRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 @RequiredArgsConstructor
 public class InstanceManagementServiceImpl implements InstanceManagementService{
@@ -18,10 +20,10 @@ public class InstanceManagementServiceImpl implements InstanceManagementService{
 //        this.boundPolicyService = boundPolicyService;
 //    }
 
-    //    @Override
-//    public List<InstanceDto> findInstanceList(String ownerId) {
-//        return null;
-//    }
+    @Override
+    public List<InstanceDto> findInstanceList(String username) {
+        return null;
+    }
 
     @Override
     public InstanceDto findInstanceDetail(String memberId) {

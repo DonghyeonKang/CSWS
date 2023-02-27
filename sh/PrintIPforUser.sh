@@ -3,7 +3,7 @@
 
 PrintIPforUser(){
     local userName=$1 # 컨테이너를 실행시킨 유저 이름
-    docker inspect -f "{{ .Name }} -> {{ .NetworkSettings.IPAddress }}" $(docker ps -qa) #| grep "$userName[0-99999]"
+    docker inspect -f "{{ .Name }} -> {{ .NetworkSettings.IPAddress }}" $(docker ps -qa) | grep "$userName[0-99999]"
 }
 
 PrintIPforUser $1

@@ -35,19 +35,6 @@ public class InstanceController {
 
     @PostMapping("/instance/new")
     public String create(InstanceDto instanceDto) {
-        Instance instance = new Instance();
-
-        /*instance.setName(instanceDto.getName());
-        instance.setId(instanceDto.getId());
-        instance.setState(instanceDto.getState());
-        instance.setStorage(instanceDto.getStorage());
-        instance.setAddress(instanceDto.getAddress());
-        instance.setPort(instanceDto.getPort());
-        instance.setKeyName(instanceDto.getKeyName());
-        instance.setOs(instanceDto.getOs());
-        Date date = new Date();
-        instance.setCreated(date);
-        instance.setMemberId(instanceDto.getMemberId());*/
 
         instanceCreateService.createInstance(instanceDto);
 
@@ -59,16 +46,6 @@ public class InstanceController {
 
     @PostMapping("/instances")
     public String list(Model model, String instanceId) {
-
-        ShRunner shRunner = new ShRunner();
-
-        // 실행할 쉘 스크립트 경로(절대경로 혹은 저장소 루트로부터의 경로)
-        String cmds = "sh src/main/java/com/example/CSWS/common/shRunner/runnerTest.sh";
-        // 0번 인수 : 배쉬 쉘 실행파일 경로
-        String[] callCmd = {"C:/Program Files/Git/git-bash.exe", "-c", cmds};
-        Map map = shRunner.execCommand(callCmd);
-
-        System.out.println(map);
 
         // 임시로 하나만 있는지 확인
         Optional<InstanceDto> instance = instanceManagementService.findInstanceDetail(instanceId);

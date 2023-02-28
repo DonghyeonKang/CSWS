@@ -2,6 +2,7 @@ package com.example.CSWS.controller;
 
 import com.example.CSWS.domain.Instance;
 import com.example.CSWS.domain.InstanceDto;
+import com.example.CSWS.common.shRunner.ShRunner;
 import com.example.CSWS.service.instance.InstanceCreateService;
 import com.example.CSWS.service.instance.InstanceManagementService;
 import lombok.RequiredArgsConstructor;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 // 필요한 클래스 앞에 @Service 어노테이션을 붙여줘야 인식한다.
@@ -33,19 +35,6 @@ public class InstanceController {
 
     @PostMapping("/instance/new")
     public String create(InstanceDto instanceDto) {
-        Instance instance = new Instance();
-
-        /*instance.setName(instanceDto.getName());
-        instance.setId(instanceDto.getId());
-        instance.setState(instanceDto.getState());
-        instance.setStorage(instanceDto.getStorage());
-        instance.setAddress(instanceDto.getAddress());
-        instance.setPort(instanceDto.getPort());
-        instance.setKeyName(instanceDto.getKeyName());
-        instance.setOs(instanceDto.getOs());
-        Date date = new Date();
-        instance.setCreated(date);
-        instance.setMemberId(instanceDto.getMemberId());*/
 
         instanceCreateService.createInstance(instanceDto);
 
@@ -57,6 +46,7 @@ public class InstanceController {
 
     @PostMapping("/instances")
     public String list(Model model, String instanceId) {
+
         // 임시로 하나만 있는지 확인
         Optional<InstanceDto> instance = instanceManagementService.findInstanceDetail(instanceId);
         List<InstanceDto> instances = new ArrayList<>();

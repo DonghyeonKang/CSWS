@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,7 +13,15 @@ import java.util.Map;
 public class ShRunner {
     public Map execCommand(String... str) {
         Map<Integer, String> map = new HashMap<>();
-        ProcessBuilder pb = new ProcessBuilder(str);
+
+        // making shell command
+        String baseStrShellScriptPath = "sh src/test/java/com/example/CSWS/shRunnerTest/";
+        String shellScriptPath = baseStrShellScriptPath + Arrays.toString(str).replaceAll("\\[", "").replaceAll("\\]", "");
+        String baseStrShellPath = "/bin/bash";
+        // 0번 인수 : 배쉬 쉘 실행파일 경로
+        String[] callCmd = {baseStrShellPath, "-c", shellScriptPath};
+
+        ProcessBuilder pb = new ProcessBuilder(callCmd);
         pb.redirectErrorStream(true);
         Process process = null;
         try {

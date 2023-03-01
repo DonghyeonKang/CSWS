@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="container">
+  <div>
+    <table>
+      <thead>
+      <tr>
+        <th>이름</th>
+
+        <th>instanceId</th>
+
+        <th>상태</th>
+
+        <th>(최대)용량</th>
+
+        <th>IPv4</th>
+
+        <th>포트 번호</th>
+
+        <th>키 이름</th>
+
+        <th>OS</th>
+
+        <th>생성일자</th>
+
+        <th>유저 id</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="instance : ${instances}">
+        <td th:text="${instance.name}"></td>
+        <td th:text="${instance.id}"></td>
+        <td th:text="${instance.state}"></td>
+        <td th:text="${instance.storage}"></td>
+        <td th:text="${instance.address}"></td>
+        <td th:text="${instance.port}"></td>
+        <td th:text="${instance.keyName}"></td>
+        <td th:text="${instance.os}"></td>
+        <td th:text="${instance.created}"></td>
+        <td th:text="${instance.memberId}"></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div> <!-- /container -->
+</body>
+</html>

@@ -1,4 +1,4 @@
-package com.example.CSWS.domain;
+package com.example.CSWS.domain.boundPolicy;
 
 import lombok.Builder;
 import lombok.Getter;

@@ -1,10 +1,9 @@
 package com.example.CSWS.securityGroup;
 
 import com.example.CSWS.NewAppConfig1;
-import com.example.CSWS.domain.BoundPolicy;
-import com.example.CSWS.domain.BoundPolicyDto;
-import com.example.CSWS.domain.SecurityGroup;
-import com.example.CSWS.domain.SecurityGroupDto;
+import com.example.CSWS.domain.boundPolicy.BoundPolicy;
+import com.example.CSWS.domain.boundPolicy.BoundPolicyDto;
+import com.example.CSWS.domain.securityGroup.SecurityGroupDto;
 import com.example.CSWS.service.boundPolicy.BoundPolicyService;
 import com.example.CSWS.service.securityGroup.SecurityGroupService;
 import org.junit.jupiter.api.Test;

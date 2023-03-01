@@ -1,7 +1,7 @@
 package com.example.CSWS.service.boundPolicy;
 
-import com.example.CSWS.domain.BoundPolicy;
-import com.example.CSWS.domain.BoundPolicyDto;
+import com.example.CSWS.domain.boundPolicy.BoundPolicy;
+import com.example.CSWS.domain.boundPolicy.BoundPolicyDto;
 import com.example.CSWS.repository.boundPolicy.BoundPolicyRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;

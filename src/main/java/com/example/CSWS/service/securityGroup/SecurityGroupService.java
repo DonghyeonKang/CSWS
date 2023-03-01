@@ -1,7 +1,7 @@
 package com.example.CSWS.service.securityGroup;
 
-import com.example.CSWS.domain.SecurityGroup;
-import com.example.CSWS.domain.SecurityGroupDto;
+import com.example.CSWS.domain.securityGroup.SecurityGroup;
+import com.example.CSWS.domain.securityGroup.SecurityGroupDto;
 
 import java.util.Optional;
 

@@ -1,6 +1,6 @@
 package com.example.CSWS.service.instance;
 
-import com.example.CSWS.domain.InstanceDto;
+import com.example.CSWS.domain.Instance.InstanceDto;
 
 public interface InstanceCreateService {
 

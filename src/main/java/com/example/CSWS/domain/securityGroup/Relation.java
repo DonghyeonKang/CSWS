@@ -1,4 +1,4 @@
-package com.example.CSWS.domain;
+package com.example.CSWS.domain.securityGroup;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

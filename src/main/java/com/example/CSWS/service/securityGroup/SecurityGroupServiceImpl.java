@@ -1,8 +1,8 @@
 package com.example.CSWS.service.securityGroup;
 
-import com.example.CSWS.domain.Relation;
-import com.example.CSWS.domain.SecurityGroup;
-import com.example.CSWS.domain.SecurityGroupDto;
+import com.example.CSWS.domain.securityGroup.Relation;
+import com.example.CSWS.domain.securityGroup.SecurityGroup;
+import com.example.CSWS.domain.securityGroup.SecurityGroupDto;
 import com.example.CSWS.repository.securityGroup.RelationRepository;
 import com.example.CSWS.service.boundPolicy.BoundPolicyService;
 import com.example.CSWS.repository.securityGroup.SecurityGroupRepository;
@@ -10,7 +10,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.util.Optional;
-import java.util.function.Consumer;
 
 @Component
 @RequiredArgsConstructor

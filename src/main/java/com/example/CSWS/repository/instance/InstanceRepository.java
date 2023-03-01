@@ -1,6 +1,6 @@
 package com.example.CSWS.repository.instance;
 
-import com.example.CSWS.domain.Instance;
+import com.example.CSWS.domain.Instance.Instance;
 
 import java.util.Optional;
 

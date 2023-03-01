@@ -4,6 +4,7 @@ import com.example.CSWS.NewAppConfig1;
 import com.example.CSWS.domain.BoundPolicy;
 import com.example.CSWS.domain.BoundPolicyDto;
 import com.example.CSWS.domain.SecurityGroup;
+import com.example.CSWS.domain.SecurityGroupDto;
 import com.example.CSWS.service.boundPolicy.BoundPolicyService;
 import com.example.CSWS.service.securityGroup.SecurityGroupService;
 import org.junit.jupiter.api.Test;
@@ -25,7 +26,7 @@ public class SecurityGroupAndBoundPolicyTest {
 
         BoundPolicyDto inbound = new BoundPolicyDto("temp", "ssh", "tcp", "9998", "random");
         BoundPolicyDto outbound = new BoundPolicyDto("temp", "ftp", "tcp", "9999", "random");
-        SecurityGroup s1 = new SecurityGroup("temp", "tmp", "for test", "test", 1, 1);
+        SecurityGroupDto s1 = new SecurityGroupDto("temp", "tmp", "for test", "test", 1, 1);
 
         securityGroupService.createSecurityGroup("temp", s1);
         System.out.println(securityGroupService.findSecurityGroup("temp"));

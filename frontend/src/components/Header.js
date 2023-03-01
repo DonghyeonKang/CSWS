@@ -33,21 +33,23 @@ const HeaderContent = styled.div`
 `;
 
 const HeaderLogo = styled.img`
-  width: 75px;
-  height: 30px;
+  cursor: pointer;
+  width: 100px;
+  height: 50px;
   border: 1px white solid;
 `;
 
 const HeaderBtn = styled.button`
+  cursor: pointer;
   width: 100px;
-  height: 30px;
+  height: 35px;
   font-size: 16px;
   color: white;
   background-color: #ec7211;
   border: 2px #ec7211 solid;
   border-radius: 5vh;
   margin-right: 20px;
-  :hover{
+  &:hover{
     background-color: #eb5f07;
   }
 `;

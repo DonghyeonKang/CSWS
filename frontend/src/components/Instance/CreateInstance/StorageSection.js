@@ -12,6 +12,8 @@ const StorageSection = ({setData, data}) => {
                 <option value={2}>2GB</option>
                 <option value={4}>4GB</option>
                 <option value={8}>8GB</option>
+                <option value={16}>16GB</option>
+                <option value={32}>32GB</option>
             </select>
         </Storage>
     );

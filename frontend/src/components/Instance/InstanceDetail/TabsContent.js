@@ -62,7 +62,7 @@ const DetailTab = styled.div`
   padding: 5px;
   border: 1px solid #eaeded;
   background-color: #fafafa;
-  :hover{
+  &:hover{
     color: #0073bb;
   }
 `;
@@ -78,7 +78,7 @@ const DetailContent = styled.div`
   gap: 0.5%;
   row-gap: 5px;
   width: 100%;
-  min-width: 900px;
+  min-width: 1150px;
   margin-bottom: 5%;
   background-color: white;
 `;
@@ -96,7 +96,7 @@ const DetailGrid = styled.div`
 const DetailId = styled(DetailGrid)`
   cursor: pointer;
   color: #0073bb;
-  :hover{
+  &:hover{
     text-decoration: underline;
   }
 `;

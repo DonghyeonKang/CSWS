@@ -76,7 +76,7 @@ const InstanceBody = styled.td`
 
 const InstanceId = styled(InstanceBody)`
   color: #0073bb;
-  :hover{
+  &:hover{
     cursor: pointer;
     text-decoration: underline;
   }

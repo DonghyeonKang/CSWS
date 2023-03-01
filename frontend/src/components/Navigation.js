@@ -37,12 +37,12 @@ const Navigation = () => {
 export default Navigation;
 
 const Nav = styled.div`
-    margin-bottom: 2%;
+    margin: 2% 0;
 `;
 
 const Link = styled.span`
     cursor: pointer;
-    :hover{
+    &:hover{
         text-decoration: underline;
     }
 `;

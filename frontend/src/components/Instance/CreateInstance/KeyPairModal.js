@@ -6,26 +6,34 @@ const KeyPairModal = ({setModalOpen}) => {
             <ModalContent>
                 <ModalHeader>
                     <HeaderContent>
-                        <Title>새 키페어 생성</Title>
+                        <Title>새 키 페어 생성</Title>
                         <Cancel onClick={()=>setModalOpen(false)}>X</Cancel>
                     </HeaderContent>
                 </ModalHeader>
 
                 <ModalBody>
                     <BodyContent>
-                        <div>키페어 이름</div>
-                        <input />
-                        <div>키페어 타입</div>
-                        <div>RSA 고정</div>
-                        <div>개인 키 파일 형식</div>
-                        <div>.pem 고정</div>
+                        <KeyPairName>
+                            <div style={{marginBottom:'5px'}}>키 페어 이름</div>
+                            <input placeholder="키 페어 이름"/>
+                        </KeyPairName>
+                        <KeyPairType>
+                            <div style={{marginBottom:'5px'}}>키페어 타입</div>
+                            <input type='radio'/>
+                            <span> RSA</span>
+                        </KeyPairType>
+                        <PrivateKeyFileFormat>
+                            <div style={{marginBottom:'5px'}}>개인 키 파일 형식</div>
+                            <input type='radio'/>
+                            <span> .pem</span>
+                        </PrivateKeyFileFormat>
                     </BodyContent>
                 </ModalBody>
 
                 <ModalBtn>
                     <Btn>
                         <Cancel onClick={()=>setModalOpen(false)}>취소</Cancel>
-                        <Create>새 키페어 생성</Create>
+                        <Create>새 키 페어 생성</Create>
                     </Btn>
                 </ModalBtn>
             </ModalContent>
@@ -45,7 +53,8 @@ const CreateKeyPair = styled.div`
 
 const ModalContent = styled.div`
     position: absolute;
-    width: 40%;
+    width: 35%;
+    min-width: 350px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -75,12 +84,28 @@ const ModalBody = styled.div`
     background-color: #ffffff;
 `;
 
+const KeyPairName = styled.div`
+    margin: 5% 0;
+    font-size: 16px;
+`;
+
+const KeyPairType = styled.div`
+    cursor: default;
+    margin: 5% 0;
+    font-size: 16px;
+`;
+
+const PrivateKeyFileFormat = styled.div`
+    cursor: default;
+    margin: 5% 0;
+    font-size: 16px;
+`;
+
 const BodyContent = styled.div`
     padding: 3%;
 `;
 
 const ModalBtn = styled.div`
-    margin-top: 50px;
     padding: 3%;
 `;
 
@@ -93,18 +118,18 @@ const Btn = styled.div`
 const Create = styled.div`
   cursor: pointer;
   margin-left: 20px;
-  padding: 2px 12px;
+  padding: 4px 15px;
   background-color: #ec7211;
   color: white;
-  :hover{
+  &:hover{
     background-color: #eb5f07;
   }
 `;
 
 const Cancel = styled.div`
   cursor: pointer;
-  padding: 2px 12px;
-  :hover{
+  padding: 4px 15px;
+  &:hover{
     background-color: #fafafa;
     color: black;
   }

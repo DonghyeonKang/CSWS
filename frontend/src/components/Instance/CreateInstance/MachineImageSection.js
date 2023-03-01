@@ -43,12 +43,13 @@ const OSTabs = styled.div`
   display: flex;
   justify-content: space-evenly;
   margin: 4% 0;
+  width: 100%;
 `;
 
 const OSTab = styled.div`
   border: 1px solid black;
   width: 5vw;
-  min-width: 60px;
+  min-width: 75px;
   height: 10vh;
   min-height: 60px;
   display: flex;

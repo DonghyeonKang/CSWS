@@ -34,8 +34,8 @@ const EditInboundRules = () => {
                 <tr>
                     <RulesHeader style={{width:'12vw', minWidth:'150px'}}>보안 그룹 ID</RulesHeader>
                     <RulesHeader style={{width:'12vw', minWidth:'150px'}}>유형</RulesHeader>
-                    <RulesHeader style={{width:'12vw', minWidth:'150px'}}>프로토콜</RulesHeader>
-                    <RulesHeader style={{width:'8vw', minWidth:'150px'}}>포트 범위</RulesHeader>
+                    <RulesHeader style={{width:'5vw', minWidth:'80px'}}>프로토콜</RulesHeader>
+                    <RulesHeader style={{width:'5vw', minWidth:'80px'}}>포트 범위</RulesHeader>
                     <RulesHeader style={{width:'12vw', minWidth:'150px'}}>CIDR 블록</RulesHeader>
                     <th> </th>
                 </tr>
@@ -43,10 +43,14 @@ const EditInboundRules = () => {
                     return(
                     <tr>
                       <td style={{width:'12vw', minWidth:'150px'}}>{i.Id}</td>
-                      <td style={{width:'12vw', minWidth:'150px'}}>{i.type}</td>
-                      <td style={{width:'12vw', minWidth:'150px'}}>{i.protocol}</td>
-                      <td style={{width:'8vw', minWidth:'150px'}}>{i.port}</td>
-                      <td style={{width:'12vw', minWidth:'150px'}}>{i.CIDR}</td>
+                      <td><select style={{width:'12vw', minWidth:'150px'}}>
+                        <option>{i.type}</option>
+                      </select></td>
+                      <td><input style={{width:'5vw', minWidth:'80px'}} value={i.protocol}/></td>
+                      <td><input style={{width:'5vw', minWidth:'80px'}} value={i.port}/></td>
+                      <td><select style={{width:'12vw', minWidth:'150px'}}>
+                        <option>{i.CIDR}</option>
+                      </select></td>
                       <DeleteRule onClick={()=>{setData(data.filter((item)=>item.number !== i.number))}}>
                         삭제
                       </DeleteRule>
@@ -69,7 +73,8 @@ export default EditInboundRules;
 
 const Container = styled.div`
 display: flex;
-width: 1110px;
+width: 100%;
+min-width: 900px;
 margin: 3% 0;
 box-shadow: 2px 2px #dbdfe0;
 background-color: #fafafa;
@@ -94,7 +99,7 @@ const DeleteRule = styled.td`
   border: 1px solid black;
   text-align: center;
   width: 50px;
-  :hover{
+  &:hover{
     background-color: #fafafa;
     color: black;
   }
@@ -108,10 +113,10 @@ const BtnSection = styled.div`
 const AddRule = styled.span`
   cursor: pointer;
   border: 0.5px solid #879596;
-  max-height: 20px;
-  padding: 2px 12px;
+  height: 25px;
+  padding: 4px 15px;
   background-color: white;
-  :hover{
+  &:hover{
     background-color: #fafafa;
     color: black;
   }
@@ -120,18 +125,18 @@ const AddRule = styled.span`
 const SaveRules = styled.span`
   cursor: pointer;
   margin-left: 20px;
-  padding: 2px 12px;
+  padding: 4px 15px;
   background-color: #ec7211;
   color: white;
-  :hover{
+  &:hover{
     background-color: #eb5f07;
   }
 `;
 
 const Cancel = styled.span`
   cursor: pointer;
-  padding: 2px 12px;
-  :hover{
+  padding: 4px 15px;
+  &:hover{
     background-color: white;
     color: black;
   }

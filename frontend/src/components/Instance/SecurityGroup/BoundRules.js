@@ -61,14 +61,14 @@ export default BoundRules;
 const Tabs = styled.div`
 `;
 const Tab = styled.div`
-cursor: pointer;
-display: inline-block;
-padding: 5px;
-border: 1px solid #eaeded;
-background-color: #fafafa;
-:hover{
-  color: #0073bb;
-}
+  cursor: pointer;
+  display: inline-block;
+  padding: 5px;
+  border: 1px solid #eaeded;
+  background-color: #fafafa;
+  &:hover{
+    color: #0073bb;
+  }
 `;
 const SelectedTab = styled(Tab)`
   color: #0073bb;
@@ -78,13 +78,13 @@ const SelectedTab = styled(Tab)`
 const Box = styled.div`
   border: 1px solid #eaeded;
   padding: 1%;
-  min-width: 750px;
+  min-width: 900px;
   background-color: white;
 `;
 const Stripe = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 2% 0;
+  margin-bottom: 2%;
 `;
 const Title = styled.div`
   font-size: 20px;
@@ -96,7 +96,7 @@ const EditRules = styled.div`
   padding: 2px 12px;
   font-weight: 600;
   background-color: white;
-  :hover{
+  &:hover{
     background-color: #fafafa;
     color: black;
   }

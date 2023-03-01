@@ -69,7 +69,8 @@ export default EditOutboundRules;
 
 const Container = styled.div`
 display: flex;
-width: 1110px;
+width: 100%;
+min-width: 900px;
 margin: 3% 0;
 box-shadow: 2px 2px #dbdfe0;
 background-color: #fafafa;
@@ -94,7 +95,7 @@ const DeleteRule = styled.td`
   border: 1px solid black;
   text-align: center;
   width: 50px;
-  :hover{
+  &:hover{
     background-color: #fafafa;
     color: black;
   }
@@ -108,10 +109,10 @@ const BtnSection = styled.div`
 const AddRule = styled.span`
   cursor: pointer;
   border: 0.5px solid #879596;
-  max-height: 20px;
+  height: 25px;
   padding: 2px 12px;
   background-color: white;
-  :hover{
+  &:hover{
     background-color: #fafafa;
     color: black;
   }
@@ -123,7 +124,7 @@ const SaveRules = styled.span`
   padding: 2px 12px;
   background-color: #ec7211;
   color: white;
-  :hover{
+  &:hover{
     background-color: #eb5f07;
   }
 `;
@@ -131,7 +132,7 @@ const SaveRules = styled.span`
 const Cancel = styled.span`
   cursor: pointer;
   padding: 2px 12px;
-  :hover{
+  &:hover{
     background-color: white;
     color: black;
   }

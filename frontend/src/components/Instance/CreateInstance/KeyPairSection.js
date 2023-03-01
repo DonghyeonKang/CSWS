@@ -12,10 +12,10 @@ const KeyPairSection = ({setData, data}) => {
     return (
       <>
         <KeyPair>
-            <Title>키페어</Title>
+            <Title>키 페어</Title>
             <div style={{display:'flex', justifyContent:'space-between'}}>
               <input style={{width:'60%'}} onChange={keyPairHandler}/>
-              <CreateKeyPair onClick={()=>setModalOpen(true)}>새 키페어 생성</CreateKeyPair>
+              <CreateKeyPair onClick={()=>setModalOpen(true)}>새 키 페어 생성</CreateKeyPair>
             </div>
         </KeyPair>
         <Btn>
@@ -57,26 +57,27 @@ const Btn = styled.div`
 
 const CreateKeyPair = styled.span`
   cursor: pointer;
-  :hover{
+  &:hover{
     text-decoration: underline;
   }
 `;
 
 const Create = styled.div`
   cursor: pointer;
-  margin-left: 20px;
-  padding: 2px 12px;
+  padding: 4px 15px;
+  height: 25px;
   background-color: #ec7211;
+  margin-left: 20px;
   color: white;
-  :hover{
+  &:hover{
     background-color: #eb5f07;
   }
 `;
 
 const Cancel = styled.div`
   cursor: pointer;
-  padding: 2px 12px;
-  :hover{
+  padding: 4px 15px;
+  &:hover{
     background-color: white;
     color: black;
   }

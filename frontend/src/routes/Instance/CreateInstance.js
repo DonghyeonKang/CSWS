@@ -1,12 +1,9 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Header from "../../components/Header";
 
 const CreateInstance = () => {
   const navigate = useNavigate();
-  const [name, setName] = useState();
-  const [os, setOs] = useState();
     return (
       <>
         <Header/>
@@ -14,32 +11,29 @@ const CreateInstance = () => {
           <div>인스턴스 생성</div>
           <Top>
             <Name>
-              <Title>인스턴스 이름</Title>
-              <input onChange={(i)=>setName(i.target.value)}/>
+              <div>인스턴스 이름</div>
+              <input/>
             </Name>
-
             <Storage>
-              <Title>스토리지 구성</Title>
+              <div>스토리지 구성</div>
               <select>
                 <option>스토리지 구성 정보</option>
               </select>
             </Storage>
           </Top>
-
           <Bottom>
             <OS>
-              <Title>운영체제 종류</Title>
+              <div>운영체제 종류</div>
               <OSImg>
-                <OSSelect onClick={()=>setOs('Ubuntu')}>우분투</OSSelect>
-                <OSSelect onClick={()=>setOs('CentOs')}>CentOS</OSSelect>
+                <OSSelect>우분투</OSSelect>
+                <OSSelect>CentOS</OSSelect>
               </OSImg>
               <select>
                 <option>운영체제 버전</option>
               </select>
             </OS>
-
             <KeyPair>
-              <Title>키페어</Title>
+              <div>키페어</div>
               <div style={{display:'flex', justifyContent:'space-between'}}>
                 <input style={{width:'60%'}}/>
                 <span>새 키페어 생성</span>
@@ -64,9 +58,6 @@ const Content = styled.div`
   padding-top: 10vh;
   width: 90%;
 `;
-const Title = styled.div`
-  margin-bottom: 5%;
-`;
 const Box = styled.div`
   display: flex;
   flex-direction: column;
@@ -78,9 +69,7 @@ const Box = styled.div`
 const Name = styled(Box)``;
 const Storage = styled(Box)``;
 const OS = styled(Box)``;
-const KeyPair = styled(Box)`
-  height: 50%;
-`;
+const KeyPair = styled(Box)``;
 
 const Top = styled.div`
   width: 100%;
@@ -114,5 +103,4 @@ const OSSelect = styled.div`
 const Btn = styled.div`
   display: flex;
   justify-content: end;
-  margin-top: -8%;
 `;

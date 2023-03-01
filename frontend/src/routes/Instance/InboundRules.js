@@ -6,26 +6,14 @@ import Header from "../../components/Header";
 const InboundRules = () => {
   const navigate = useNavigate();
   const {instanceId,securityGroupId} = useParams();
-  const [number, setNumber] = useState(1);
-  const [data,setData] = useState([{
-    Id:1,
-    type:2,
-    protocol:3,
-    port:4,
-    CIDR:5,
-    number:0,
-  }]);
+  const gridHeader = ['보안 그룹 ID', '유형', '프로토콜', '포트 범위', 'CIDR 블록'];
+  const [gridData,setGridData] = useState(['-','-','-','-','-']);//객체로 만드는게 생성 삭제가 쉬울듯
+  const [deleteBtn,setDeleteBtn] = useState(['삭제']);
   const addData = () => {
-    setNumber((prev)=>prev+1);
-    setData([...data,{
-      Id:1,
-      type:2,
-      protocol:3,
-      port:4,
-      CIDR:5,
-      number
-    }]);
+    setGridData([...gridData,'-','-','-','-','-']);
+    setDeleteBtn([...deleteBtn,'삭제']);
   }
+  let number = 1;
     return (
       <>
         <Header/>
@@ -34,26 +22,27 @@ const InboundRules = () => {
             <Rules>
               <tbody>
               <RulesGrid>
-                <td style={{width:'14vw'}}>보안 그룹 ID</td>
-                <td style={{width:'14vw'}}>유형</td>
-                <td style={{width:'14vw'}}>프로토콜</td>
-                <td style={{width:'14vw'}}>포트 범위</td>
-                <td style={{width:'14vw'}}>CIDR 블록</td>
-                <td style={{width:'5vw'}}> </td>
+                {gridHeader.map((i)=>{return (<td key={i} style={{width:'16vw'}}>{i}</td>)})}
               </RulesGrid>
-              {data.map((i)=>{
-                return(
-                <RulesGrid>
-                  <td style={{width:'14vw'}}>{i.Id}</td>
-                  <td style={{width:'14vw'}}>{i.type}</td>
-                  <td style={{width:'14vw'}}>{i.protocol}</td>
-                  <td style={{width:'14vw'}}>{i.port}</td>
-                  <td style={{width:'14vw'}}>{i.CIDR}</td>
-                  <td style={{width:'5vw'}} onClick={()=>{
-                    setData(data.filter((item)=>item.number !== i.number))}}>삭제</td>
-                </RulesGrid>)})}
+              <RulesGrid> 
+                {gridData.map((i)=>{
+                  number++;
+                  return (<td key={number} style={{width:'16vw',margin:'1vh 0'}}>{i}</td>)
+                  })}
+              </RulesGrid>
               </tbody>
             </Rules>
+            <table style={{width:'5vw'}}>
+            <tbody>
+              <Delete>
+                <td style={{visibility:'hidden'}}>0</td>
+              </Delete>
+
+              <Delete> 
+                {deleteBtn.map((i)=>{return(<td style={{width:'5vw',margin:'1vh 0'}}>{i}</td>)})}
+              </Delete>
+            </tbody>
+            </table>
           </Container>
           <Btn>
           <button onClick={()=>addData()}>규칙 추가</button>
@@ -78,6 +67,11 @@ const Content = styled.div`
 const Container = styled.div`
   display: flex;
   width: 100%;
+`;
+const Delete = styled.tr`
+  display: flex;
+  flex-wrap: wrap;
+  margin: 4vh 0;
 `;
 
 const Rules = styled.table`

@@ -9,6 +9,13 @@
 ## mac 사용자는 권한 주의
 
 CreateSshKeyPair(){
+
+    # 인수가 잘 들어왔는지 확인
+    if [ $# -lt 1 ]; then
+        echo "3" #인수가 부족합니다.
+        exit 1
+    fi
+
     # 키페어로 들어갈 컨테이너 이름
     local containerName=$1
 
@@ -22,4 +29,4 @@ CreateSshKeyPair(){
     cat ~/.ssh/${containerName}/${containerName}.pub >> ~/.ssh/authorized_keys
     docker cp ~/.ssh/${containerName}/${containerName}.pub ${containerName}:root/.ssh/authorized_keys
 }
-CreateSshKeyPair $1
+CreateSshKeyPair $1 && echo "99"

@@ -14,7 +14,13 @@ local txtFile="${userName}.txt"
 
 # 인수가 잘 들어왔는지 확인
 if [ $# -lt 6 ]; then
-    echo "인수가 부족합니다."
+    echo "3" #인수가 부족합니다.
+    exit 1
+fi
+
+# 유저 코드가 5자리 수를 넘는지 확인
+if [ $userCode -gt 99999 ]; then
+    echo "6" #유저 코드는 5자리 이하로 입력해 주세요
     exit 1
 fi
 
@@ -23,12 +29,8 @@ if [ ! -d ${userDir} ]; then
     mkdir ${userDir}
 fi
 
-# 도커 컨테이너 실행
-docker run -it --privileged -d -p $hPort:$cPort --name ${userName}${userCode} --storage-opt size=$storageSize $imageName /sbin/init || exit
-# docker run -it -p $hPort:$cPort --name ${userName}${userCode} $imageName || exit
-
 # Users 디렉토리로 이동
-cd $userDir || exit
+cd $userDir
 
 # 해당하는 유저의 텍스트 파일이 존재하지 않으면 생성
 if [ ! -e "$txtFile" ]; then
@@ -37,12 +39,17 @@ fi
 
 # 유저 코드가 텍스트 파일에 존재하는지 확인
 if grep -qxF "$userCode" "$txtFile"; then
-    echo "이미 존재하는 유저 코드입니다."
-    exit 0
+    echo "4" #이미 존재하는 유저 코드입니다.
+    exit 1
 else
     echo "${userCode}" >> "$txtFile"
 fi
 
+# 도커 컨테이너 실행
+docker run -it --privileged -d -p $hPort:$cPort --name ${userName}${userCode} --storage-opt size=$storageSize $imageName /sbin/init
+# docker run -it -p $hPort:$cPort --name ${userName}${userCode} $imageName || exit
+
+
 }
 
-CreateContainer $1 $2 $3 $4 $5 $6
+CreateContainer $1 $2 $3 $4 $5 $6 && echo "99"

@@ -6,7 +6,12 @@ import Typography from '@mui/material/Typography';
 import Avatar from '@mui/material/Avatar';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
+import styled from 'styled-components'
 
+const StyledText = styled.div`
+color:red;
+font-size:0.8rem;
+`;
 
 const ChangePw = () => {
     const navigate = useNavigate();
@@ -89,7 +94,7 @@ const ChangePw = () => {
         <div>
           {
             !pwValid && pw.length > 0 && (
-              <div>특문자 제외 영문자 숫자로 8자 이상 20자 미만으로 입력해주세요</div>
+              <StyledText>특문자 제외 영문자 숫자로 8자 이상 20자 미만으로 입력해주세요</StyledText>
             )}
         </div>        <TextField
           margin="normal"
@@ -107,7 +112,7 @@ const ChangePw = () => {
         <div>
           {
             !pw2Valid && pw2.length > 0 && (
-              <div>비밀번호가 일치하지 않습니다</div>
+              <StyledText>비밀번호가 일치하지 않습니다</StyledText>
             )}
         </div>        
         <Button

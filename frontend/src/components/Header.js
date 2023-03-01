@@ -26,7 +26,6 @@ const HeaderContent = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 97vw;
-  max-width: 100vw;
   height: 35px;
   padding: 1% 2%;
   background-color: #232f3e;
@@ -34,18 +33,21 @@ const HeaderContent = styled.div`
 `;
 
 const HeaderLogo = styled.img`
-  min-width: 6vw;
+  width: 75px;
   height: 30px;
   border: 1px white solid;
 `;
 
 const HeaderBtn = styled.button`
-  min-width: 8vw;
-  min-height: 20px;
-  max-height: 30px;
+  width: 100px;
+  height: 30px;
   font-size: 16px;
   color: white;
   background-color: #ec7211;
   border: 2px #ec7211 solid;
   border-radius: 5vh;
+  margin-right: 20px;
+  :hover{
+    background-color: #eb5f07;
+  }
 `;

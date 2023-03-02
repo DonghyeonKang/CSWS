@@ -1,7 +1,7 @@
 package com.example.CSWS.controller;
 
-import com.example.CSWS.domain.Instance;
-import com.example.CSWS.domain.InstanceDto;
+import com.example.CSWS.domain.instance.Instance;
+import com.example.CSWS.domain.instance.InstanceDto;
 import com.example.CSWS.domain.instance.StartInstanceRequest;
 import com.example.CSWS.service.instance.InstanceCreateService;
 import com.example.CSWS.service.instance.InstanceManagementService;
@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 // 필요한 클래스 앞에 @Service 어노테이션을 붙여줘야 인식한다.

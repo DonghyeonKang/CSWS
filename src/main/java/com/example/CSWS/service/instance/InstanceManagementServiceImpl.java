@@ -1,7 +1,7 @@
 package com.example.CSWS.service.instance;
 
 import com.example.CSWS.common.shRunner.ShRunner;
-import com.example.CSWS.domain.InstanceDto;
+import com.example.CSWS.domain.instance.InstanceDto;
 import com.example.CSWS.domain.instance.StartInstanceRequest;
 import com.example.CSWS.repository.instance.InstanceRepository;
 import lombok.RequiredArgsConstructor;

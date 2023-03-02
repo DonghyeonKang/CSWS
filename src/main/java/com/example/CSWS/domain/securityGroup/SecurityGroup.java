@@ -1,5 +1,6 @@
-package com.example.CSWS.domain;
+package com.example.CSWS.domain.securityGroup;
 
+import lombok.Builder;
 import lombok.Getter;
 
 import javax.persistence.Column;
@@ -25,6 +26,7 @@ public class SecurityGroup {
 
     public SecurityGroup() {    }
 
+    @Builder
     public SecurityGroup(String securityId, String securityName, String comment, String memberId, int inboundNumber, int outboundNumber) {
         this.securityId = securityId;
         this.securityName = securityName;

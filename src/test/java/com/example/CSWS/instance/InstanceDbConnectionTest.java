@@ -1,7 +1,7 @@
 package com.example.CSWS.instance;
 
 import com.example.CSWS.AppConfig;
-import com.example.CSWS.domain.InstanceDto;
+import com.example.CSWS.domain.instance.InstanceDto;
 import com.example.CSWS.service.instance.InstanceCreateService;
 import com.example.CSWS.service.instance.InstanceManagementService;
 import com.example.CSWS.domain.user.UserDto;

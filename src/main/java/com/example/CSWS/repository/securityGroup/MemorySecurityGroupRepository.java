@@ -1,6 +1,6 @@
 package com.example.CSWS.repository.securityGroup;
 
-import com.example.CSWS.domain.SecurityGroup;
+import com.example.CSWS.domain.securityGroup.SecurityGroup;
 
 import java.util.HashMap;
 import java.util.Map;

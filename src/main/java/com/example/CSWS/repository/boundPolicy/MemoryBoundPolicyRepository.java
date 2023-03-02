@@ -1,6 +1,6 @@
 package com.example.CSWS.repository.boundPolicy;
 
-import com.example.CSWS.domain.BoundPolicyDto;
+import com.example.CSWS.domain.boundPolicy.BoundPolicyDto;
 
 import java.util.ArrayList;
 import java.util.List;

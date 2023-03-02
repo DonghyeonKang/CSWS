@@ -19,6 +19,7 @@ public class Instance {
     private String state;
     private Double storage;
     private String address;
+    private int code;
     private int port;
     @Column(name = "keyname")
     private String keyName;

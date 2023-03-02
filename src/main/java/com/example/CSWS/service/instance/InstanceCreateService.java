@@ -4,8 +4,8 @@ import com.example.CSWS.domain.instance.InstanceDto;
 
 public interface InstanceCreateService {
 
-    public int createInstance(InstanceDto instanceDto);
+    public String createInstance(InstanceDto instanceDto);
 
-    public void createKeyPair(String userName, String instanceName);
+    public String createKeyPair(String userName, String instanceName);
 
 }

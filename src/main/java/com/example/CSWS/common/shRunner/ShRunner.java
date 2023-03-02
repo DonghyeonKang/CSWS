@@ -15,12 +15,11 @@ public class ShRunner {
         Map<Integer, String> map = new HashMap<>();
 
         // making shell command
-        String baseStrShellScriptPath = "sh src/test/java/com/example/CSWS/shRunnerTest/";
-        String shellScriptPath = baseStrShellScriptPath + Arrays.toString(str).replaceAll("\\[", "").replaceAll("\\]", "");
+        String baseStrShellScriptPath = "sh src/main/java/com/example/CSWS/sh/";
+        String shellScriptPath = baseStrShellScriptPath + Arrays.toString(str).replaceAll("\\[", "").replaceAll("\\]", "").replaceAll(",", "");
         String baseStrShellPath = "/bin/bash";
         // 0번 인수 : 배쉬 쉘 실행파일 경로
         String[] callCmd = {baseStrShellPath, "-c", shellScriptPath};
-
         ProcessBuilder pb = new ProcessBuilder(callCmd);
         pb.redirectErrorStream(true);
         Process process = null;

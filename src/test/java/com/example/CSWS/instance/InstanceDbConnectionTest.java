@@ -1,6 +1,6 @@
 package com.example.CSWS.instance;
 
-import com.example.CSWS.NewAppConfig1;
+import com.example.CSWS.AppConfig;
 import com.example.CSWS.domain.InstanceDto;
 import com.example.CSWS.service.instance.InstanceCreateService;
 import com.example.CSWS.service.instance.InstanceManagementService;
@@ -21,7 +21,7 @@ public class InstanceDbConnectionTest {
     @Test
 //    @Transactional
     void testInstanceServices() {
-        ApplicationContext ac = new AnnotationConfigApplicationContext(NewAppConfig1.class);
+        ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
         InstanceManagementService instanceManagementService = ac.getBean(InstanceManagementService.class);
 
         InstanceCreateService instanceCreateService = ac.getBean(InstanceCreateService.class);
@@ -48,7 +48,7 @@ public class InstanceDbConnectionTest {
 
         instanceCreateService.createInstance(i1);
 
-        System.out.println("instance = " + instanceManagementService.findInstanceDetail(i1.getId()));
+        System.out.println("instance = " + instanceManagementService.findInstanceDetails(i1.getId()));
     }
 
 }

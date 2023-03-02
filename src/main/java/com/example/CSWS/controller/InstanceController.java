@@ -2,14 +2,12 @@ package com.example.CSWS.controller;
 
 import com.example.CSWS.domain.Instance;
 import com.example.CSWS.domain.InstanceDto;
+import com.example.CSWS.domain.instance.StartInstanceRequest;
 import com.example.CSWS.service.instance.InstanceCreateService;
 import com.example.CSWS.service.instance.InstanceManagementService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +19,7 @@ import java.util.Optional;
 // 스프링 빈으로 자동 등록된다.
 // = 컴포넌트 스캔. 여기에 오토 와이어드를 이용한 자동 의존관계로
 // 서비스, 컨트롤러, 리포지토리를 연결한다.
-@Controller
+@RestController
 @RequiredArgsConstructor
 @RequestMapping("/instances")
 public class InstanceController {
@@ -60,33 +58,29 @@ public class InstanceController {
 
     // 인스턴스 시작
     @PostMapping("/start")
-    public String startInstance() {
-        String instanceId = "";
-        instanceManagementService.startInstance(instanceId);
-        return "start";
+    public String startInstance(@ModelAttribute StartInstanceRequest request) {
+        String result = instanceManagementService.startInstance(request.getInstanceId());
+        return result;
     }
 
     // 인스턴스 재시작
     @PostMapping("/restart")
-    public String restartInstance() {
-        String instanceId = "";
-        instanceManagementService.restartInstance(instanceId);
-        return "restart";
+    public String restartInstance(@ModelAttribute StartInstanceRequest request) {
+        String result = instanceManagementService.restartInstance(request.getInstanceId());
+        return result;
     }
 
     // 인스턴스 정지
     @PostMapping("/stop")
-    public String stopInstance() {
-        String instanceId = "";
-        instanceManagementService.stopInstance(instanceId);
-        return "stop";
+    public String stopInstance(@ModelAttribute StartInstanceRequest request) {
+        String result = instanceManagementService.stopInstance(request.getInstanceId());
+        return result;
     }
 
     // 인스턴스 삭제
     @PostMapping("/delete")
-    public String deleteInstance() {
-        String instanceId = "";
-        instanceManagementService.deleteInstance(instanceId);
-        return "delete";
+    public String deleteInstance(@ModelAttribute StartInstanceRequest request) {
+        String result = instanceManagementService.deleteInstance(request.getInstanceId());
+        return result;
     }
 }

@@ -1,6 +1,6 @@
 package com.example.CSWS.appConfigTest;
 
-import com.example.CSWS.NewAppConfig1;
+import com.example.CSWS.AppConfig;
 import com.example.CSWS.repository.instance.MemoryInstanceRepository;
 import com.example.CSWS.service.boundPolicy.BoundPolicyService;
 import com.example.CSWS.service.securityGroup.SecurityGroupService;
@@ -16,7 +16,7 @@ public class NewAppConfigTest1 {
 
     @Test
     void test() {
-        ApplicationContext ac = new AnnotationConfigApplicationContext(NewAppConfig1.class);
+        ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
 
         BoundPolicyService boundPolicyService = ac.getBean(BoundPolicyService.class);
         assertThat(boundPolicyService).isInstanceOf(BoundPolicyService.class);

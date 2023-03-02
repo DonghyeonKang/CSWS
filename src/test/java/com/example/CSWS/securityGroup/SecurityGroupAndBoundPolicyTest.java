@@ -1,6 +1,6 @@
 package com.example.CSWS.securityGroup;
 
-import com.example.CSWS.NewAppConfig1;
+import com.example.CSWS.AppConfig;
 import com.example.CSWS.domain.BoundPolicy;
 import com.example.CSWS.domain.BoundPolicyDto;
 import com.example.CSWS.domain.SecurityGroup;
@@ -18,7 +18,7 @@ public class SecurityGroupAndBoundPolicyTest {
 
     @Test
     void test() {
-        ApplicationContext ac = new AnnotationConfigApplicationContext(NewAppConfig1.class);
+        ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
 
         SecurityGroupService securityGroupService = ac.getBean(SecurityGroupService.class);
         BoundPolicyService boundPolicyService = ac.getBean(BoundPolicyService.class);

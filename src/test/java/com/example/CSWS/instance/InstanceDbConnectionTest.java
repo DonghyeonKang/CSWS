@@ -46,7 +46,7 @@ public class InstanceDbConnectionTest {
         i1.setCreated(date);
         i1.setMemberId("test");
 
-        instanceCreateService.createInstance(i1);
+        instanceCreateService.createInstance(/*i1*/);
 
         System.out.println("instance = " + instanceManagementService.findInstanceDetails(i1.getId()));
     }

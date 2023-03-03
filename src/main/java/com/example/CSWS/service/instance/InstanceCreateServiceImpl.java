@@ -24,27 +24,27 @@ public class InstanceCreateServiceImpl implements InstanceCreateService{
     // -> 키페어 생성을 위한 특정 유저, 인스턴스 조회에 필요한 서비스
 
     @Override
-    public String createInstance(InstanceDto instanceDto) {
+    public String createInstance() {
         
-        // DB에 인스턴스 저장 후, 갱신된 프로시저 code가 포함된 entity 받아옴
-        Instance newInstance = instanceRepository.save(instanceDto.toEntity());
-        int code = newInstance.getCode();
-        String hostPort = Integer.toString(HOSTCODE_BASE + code); // 코드를 이용해 호스트 포트 임의 결정
-
-        // 원래는 user의 String id를 넣어서 이름(닉네임)을 뽑아와야 하는데, 엔티티 및 리포지토리에 필드가 없음.
-        // 임시로 email을 넣어서 이름을 뽑아오는 메서드로 위치를 대체함.
-        // 추후 수정 필요.
-        User user = userRepository.findByUsername(instanceDto.getMemberId())
-                .orElseThrow(() -> new EntityNotFoundException(ErrorCode.USER_NOT_FOUND));
-        String username = user.getUsername();
+//        // DB에 인스턴스 저장 후, 갱신된 프로시저 code가 포함된 entity 받아옴
+//        Instance newInstance = instanceRepository.save(instanceDto.toEntity());
+//        int code = newInstance.getCode();
+//        String hostPort = Integer.toString(HOSTCODE_BASE + code); // 코드를 이용해 호스트 포트 임의 결정
+//
+//        // 원래는 user의 String id를 넣어서 이름(닉네임)을 뽑아와야 하는데, 엔티티 및 리포지토리에 필드가 없음.
+//        // 임시로 email을 넣어서 이름을 뽑아오는 메서드로 위치를 대체함.
+//        // 추후 수정 필요.
+//        User user = userRepository.findByUsername(instanceDto.getMemberId())
+//                .orElseThrow(() -> new EntityNotFoundException(ErrorCode.USER_NOT_FOUND));
+//        String username = user.getUsername();
 
         try {
-            shRunner.execCommand("CreateContainer.sh", hostPort, // 호스트 포트(임의 설정)
-                    Integer.toString(instanceDto.getPort()), // 컨테이너 포트(유저 설정)
-                    username, // 유저 '이름'
-                    Integer.toString(code), // code
-                    Double.toString(instanceDto.getStorage()), // 용량
-                    instanceDto.getOs()); // 컨테이너 이미지(유저가 정한 OS)
+            shRunner.execCommand("CreateContainer.sh", /*hostPort*/"1111", // 호스트 포트(임의 설정)
+                    Integer.toString(/*instanceDto.getPort()*/2222), // 컨테이너 포트(유저 설정)
+                    /*username*/"testname", // 유저 '이름'
+                    Integer.toString(/*code*/7777), // code
+                    Double.toString(/*instanceDto.getStorage()*/256.0), // 용량
+                    /*instanceDto.getOs()*/"ubuntu:latest"); // 컨테이너 이미지(유저가 정한 OS)
             return "success";
         } catch (Exception e) {
             return e.toString();

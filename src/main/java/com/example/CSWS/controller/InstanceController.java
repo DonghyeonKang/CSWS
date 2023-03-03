@@ -32,9 +32,9 @@ public class InstanceController {
     }
 
     @PostMapping("/new")
-    public String create(InstanceDto instanceDto) {
+    public String create(/*InstanceDto instanceDto*/) {
 
-        instanceCreateService.createInstance(instanceDto);
+        instanceCreateService.createInstance(/*instanceDto*/);
 
         return "redirect:/";
     }

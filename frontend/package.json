@@ -18,7 +18,9 @@
     "react-query": "^3.39.3",
     "react-router-dom": "^6.7.0",
     "react-scripts": "5.0.1",
+    "react-slick": "^0.29.0",
     "recoil": "^0.7.6",
+    "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.6",
     "web-vitals": "^2.1.4"
   },

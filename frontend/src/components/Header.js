@@ -2,13 +2,14 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { loginState } from "../Atoms";
+import mainlogo from "./img/Logo.png" ;
 
 const Header = () => {
   const isLoggedIn = useRecoilValue(loginState);
   const navigate = useNavigate();
   return (
     <HeaderContent>
-      <HeaderLogo src="." onClick={() => navigate('/')}/>
+      <HeaderLogo src={mainlogo} onClick={() => navigate('/')}/>
       {(isLoggedIn === 0) ? <HeaderBtn onClick={() => navigate('/login')}>로그인</HeaderBtn> : 
       <HeaderBtn onClick={() => navigate('/dashboard')}>대시보드</HeaderBtn>
       }
@@ -36,7 +37,6 @@ const HeaderLogo = styled.img`
   cursor: pointer;
   width: 100px;
   height: 50px;
-  border: 1px white solid;
 `;
 
 const HeaderBtn = styled.button`

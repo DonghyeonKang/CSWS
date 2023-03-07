@@ -12,6 +12,10 @@ import InputAdornment from '@mui/material/InputAdornment';
 import { useRecoilState } from "recoil";
 import { loginState } from "../../Atoms";
 import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+
+
+
 
 //더미데이터
 const User = {
@@ -79,13 +83,16 @@ const Login = () => {
   
   }
   const handlePasswordType = e => {
-    setPasswordType(() => {
-        if (!passwordType.visible) {
-            return { type: 'text', visible: true };
-        }
-        return { type: 'password', visible: false };
-    })
-}
+    setPasswordType(prevState => {
+      return {
+        type: prevState.visible ? "password" : "text",
+        visible: !prevState.visible
+      };
+    });
+  };
+
+  const PasswordIcon =  passwordType.visible ? VisibilityIcon : VisibilityOffIcon;
+
   return (
     <Container component="main" maxWidth="xs">
       <Box
@@ -129,7 +136,7 @@ const Login = () => {
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
-                <VisibilityIcon
+                <PasswordIcon
                 onClick={handlePasswordType}
                 />
               </InputAdornment>

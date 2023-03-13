@@ -6,80 +6,60 @@ import Header from "../components/Header";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-const Pre = styled.div`
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  left: 3%;
-  z-index: 3;
-`;
-
-const NextTo = styled.div`
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  right: 3%;
-  z-index: 3;
-`;
+import Image1 from "./img/IMAGE1.png";
+import Image2 from "./img/IMAGE2.png";
+import Image3 from "./img/IMAGE3.png";
 
 const Main = () => {
   const navigate = useNavigate();
   const [, setState] = useRecoilState(loginState);
   const settings = {
-    dots: true,
+    dots: false,
+    lazyLoad: true,
     infinite: true,
+    autoplay: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
-    nextArrow: (
-      <NextTo>
-        <ArrowBackIosIcon/>
-      </NextTo>
-    ),
-    prevArrow: (
-      <Pre>
-        <ArrowForwardIosIcon/>
-      </Pre>
-    ),
+    initialSlide: 2
   };
 
   return (
     <>
       <Header />
       <Content>
-        <div>Main</div>
-        <button onClick={() => navigate("login")}>로그인</button>
-        <button onClick={() => navigate("dashboard")}>대시보드</button>
-        <button onClick={() => setState(0)}>로그아웃</button>
-      </Content>
-
-      <SliderWrapper>
+        <SliderWrapper>
         <Slider {...settings}>
-          <div>
-            <h2>1</h2>
-          </div>
-          <div>
-            <h3>2</h3>
-          </div>
-          <div>
-            <h3>3</h3>
-          </div>
+            <div>
+            <SlideImage 
+              src={Image1}
+              alt="광고1"
+            /></div>
+            <div>
+            <SlideImage 
+              src={Image2}
+              alt="광고2"
+            /></div>
+            <div>
+            <SlideImage 
+              src={Image3}
+              alt="광고3"
+            /></div>
         </Slider>
-      </SliderWrapper>
+        </SliderWrapper>
+      </Content>
     </>
   );
 };
 
-export default Main;
-
 const Content = styled.div`
-  padding-top: 10vh;
+  padding-top: 55px;
 `;
-
+const SlideImage = styled.img`
+  width: 100%;
+  height: auto;
+`;
 const SliderWrapper = styled.div`
-  width: 95%;
-  margin : 0 auto;
+  margin: 0 -50px;
 `;
+export default Main;

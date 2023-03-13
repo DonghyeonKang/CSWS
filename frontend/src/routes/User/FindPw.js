@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Avatar from '@mui/material/Avatar';
+import MyTextField from '../../components/User/FindPw/MyTextField';
+import MyButton from "../../components/User/FindPw/MyButton";
+import MyTypography from '../../components/User/FindPw/MyTypography';
 import Container from '@mui/material/Container';
-import Box from '@mui/material/Box';
+import MyBox from '../../components/User/FindPw/MyBox';
+import AvatarComponent from '../../components/User/FindPw/AvatarComponent'; 
 import { useRecoilState } from "recoil";
 import { loginState } from "../../Atoms";
 
@@ -56,43 +56,18 @@ const FindPw = () => {
   }
   return (
     <Container component="main" maxWidth="xs">
-      <Box
-        sx={{
-          marginTop: 8,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-        }}
-      >
-        <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-        </Avatar>
-        <Typography component="h1" variant="h5">
-          CSWS
-        </Typography>
-        <TextField
-          margin="normal"
-          label="이메일"
-          name="emaill"
-          placeholder="이메일을 입력해주세요"
-          required
-          fullWidth
-          autoComplete="email"
-          autoFocus
+      <MyBox>
+        <AvatarComponent/>
+        <MyTypography>CSWS</MyTypography>
+        <MyTextField
           value={email}
           onChange={handleEmail}
           onKeyPress={onCheckEnter}
         />
-        <Button 
+        <MyButton 
           disabled={notAllow}
-          onClick={onClickConfirmButton}
-          type="submit"
-          fullWidth
-          variant="contained"
-          sx={{ mt: 3, mb: 2 }}
-        >
-          비밀번호 찾기
-        </Button>
-      </Box>
+          onClick={onClickConfirmButton} />
+      </MyBox>
     </Container>
   );
 }

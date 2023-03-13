@@ -1,29 +1,17 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const BoundRules = () => {
   const navigate = useNavigate();
-  const [tab, setTab] = useState('inboundRules');
     return (
         <>
-            <Tabs>
-              {tab === 'inboundRules' ? 
-              <SelectedTab onClick={()=> setTab('inboundRules')}>인바운드 규칙</SelectedTab> : 
-              <Tab onClick={()=> setTab('inboundRules')}>인바운드 규칙</Tab>}
-              {tab === 'outboundRules' ? 
-              <SelectedTab onClick={()=> setTab('outboundRules')}>아웃바운드 규칙</SelectedTab> : 
-              <Tab onClick={()=> setTab('outboundRules')}>아웃바운드 규칙</Tab>}
-                
-            </Tabs>
+            <Tab>
+              <SelectedTab>인바운드 규칙</SelectedTab>
+            </Tab>
             <Box>
               <Stripe>
-                {tab === 'inboundRules'? 
                 <Title>인바운드 규칙</Title>
-                : <Title>아웃바운드 규칙</Title>}
-                {tab === 'inboundRules' ? 
                 <EditRules onClick={() => navigate('inboundRules')}>인바운드 규칙 편집</EditRules>
-                : <EditRules onClick={() => navigate('outboundRules')}>아웃바운드 규칙 편집</EditRules> }
               </Stripe>
               
               <Rules> 
@@ -51,27 +39,21 @@ const BoundRules = () => {
                 </tbody>
               </Rules>
             </Box>
-            
         </>
     );
 };
 
 export default BoundRules;
 
-const Tabs = styled.div`
-`;
 const Tab = styled.div`
-  cursor: pointer;
+`;
+const SelectedTab = styled.div`
+  color: #0073bb;
+  cursor: default;
   display: inline-block;
   padding: 5px;
   border: 1px solid #eaeded;
   background-color: #fafafa;
-  &:hover{
-    color: #0073bb;
-  }
-`;
-const SelectedTab = styled(Tab)`
-  color: #0073bb;
   border-bottom: 2px solid #0073bb;
 `;
 
